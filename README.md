@@ -1,5 +1,5 @@
 # 🎫 DIZA Event Ticket (DIZAET)
-
+![Landing Page](./images/screenshot.png)
 > **Your one-stop platform for all event ticketing needs.**
 
 DIZA Event Ticket is a web-based application designed to streamline the process of managing and attending events. It provides a seamless interface for **Attendees** to book tickets and **Organizers** to manage their events, all within a secure and user-friendly environment.
@@ -64,4 +64,5 @@ DIZA-Event-Ticket/
 │   ├── com.diza.controller # Servlets
 │   ├── com.diza.model      # Java Beans
 │   └── com.diza.util       # Database Connection
+
 └── README.md
