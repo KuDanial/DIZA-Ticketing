@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIZA Event Ticket | Personal Info</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Specific Layout for the Dashboard-style Edit Page */
+        .dashboard-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 30px;
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 30px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            height: fit-content;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-yellow);
+            margin-bottom: 10px;
+        }
+
+        .sidebar-nav ul li {
+            list-style: none;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 25px;
+            color: var(--text-light);
+            font-weight: 500;
+            transition: 0.3s;
+            gap: 15px;
+        }
+
+        .sidebar-link i {
+            width: 20px;
+            font-size: 18px;
+        }
+
+        .sidebar-link.active {
+            background: #fff9e6; 
+            color: var(--text-dark);
+            border-left: 4px solid var(--primary-yellow);
+        }
+
+        .sidebar-link:hover:not(.active) {
+            background: #f9f9f9;
+            color: var(--primary-yellow);
+        }
+
+        /* Main Content Styling */
+        .edit-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card-header-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .card-header-flex h1 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .action-links {
+            display: flex;
+            gap: 15px;
+            font-size: 14px;
+        }
+
+        .action-links a {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .update-link { color: var(--primary-yellow); }
+        .cancel-link { color: #888; }
+
+        /* Form Grid based on Image */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .form-group label span { color: #e74c3c; } 
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            background-color: #fafafa;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--primary-yellow);
+            outline: none;
+            background-color: #fff;
+        }
+
+        .btn-bottom-update {
+            margin-top: 30px;
+            background-color: var(--primary-yellow);
+            color: var(--secondary-black);
+            padding: 12px 35px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.3s;
+        }
+
+        .btn-bottom-update:hover {
+            background-color: #e5ac00;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/DIZAET_Logo.png" alt="DIZA Event Ticket">
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for events, concerts, activities...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="#">Events</a>
+                <a href="#">About Us</a>
+                <a href="#">Help</a>
+            </nav>
+            <div class="auth-buttons">
+                <a href="profile.html"><i class="fas fa-user-circle"></i> amier_zhafran</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="images/event1.png" alt="Profile" class="sidebar-avatar">
+                <p style="font-size: 12px; color: #999;">modanny</p>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li><a href="#" class="sidebar-link active"><i class="fas fa-user"></i> Personal Info</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="edit-card">
+            <div class="card-header-flex">
+                <h1>Personal Info</h1>
+                <div class="action-links">
+                    <a href="#" class="update-link"><i class="fas fa-share-alt"></i> Update</a>
+                    <span style="color: #ddd;">|</span>
+                    <a href="profile.html" class="cancel-link">Cancel</a>
+                </div>
+            </div>
+
+            <p style="color: #888; font-size: 14px; margin-bottom: 30px;">
+                Manage your personal information, including phone numbers and email address where you can be contacted.
+            </p>
+
+            <form action="updateProfile" method="POST">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>First Name <span>*</span></label>
+                        <input type="text" name="firstName" value="Lebron" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name <span>*</span></label>
+                        <input type="text" name="lastName" value="Lebron" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email Address <span>*</span></label>
+                        <input type="email" name="email" value="sample@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="text" name="phoneNumber" value="0110111111">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Username <span>*</span></label>
+                        <input type="text" name="username" value="TheGoat" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Password <span>*</span></label>
+                        <input type="password" name="password" placeholder="Enter new password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gender <span>*</span></label>
+                        <select name="gender" required>
+                            <option value="" disabled>Select Gender</option>
+                            <option value="Male" selected>Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Street Address <span>*</span></label>
+                        <input type="text" name="address" value="James" required>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-bottom-update">Update Info</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET" class="footer-logo">
+                <p>&copy; 2026 DIZAZ Group. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
