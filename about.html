@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIZA Event Ticket | About Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        /* --- Official Registrations Section --- */
+        .registrations-section {
+            background-color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .registrations-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .registration-block {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .registration-block img {
+            height: 60px; /* Adjust as needed */
+            width: auto;
+        }
+
+        .registration-text p {
+            margin: 2px 0;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        .registration-text strong {
+            color: #333;
+        }
+
+
+        /* --- Hero Section --- */
+        .about-hero {
+            background-color: #222; /* Fallback */
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/background-concert.jpg'); /* Add a concert/event image here */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .about-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #ddd;
+        }
+
+        /* --- Mission Section --- */
+        .mission-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+
+        .mission-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .mission-icon {
+            font-size: 3rem;
+            color: #007bff; /* Use your brand color */
+            margin-bottom: 20px;
+        }
+
+        /* --- Team Section --- */
+        .team-section {
+            background-color: #f4f6f9;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+            gap: 30px;
+            max-width: 1200px;
+            margin: 50px auto 0;
+        }
+
+        .team-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 4px solid #f0f0f0;
+        }
+
+        .member-name {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            font-size: 0.9rem;
+            color: #777;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .social-links a {
+            color: #888;
+            margin: 0 8px;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #007bff;
+        }
+
+        /* --- Find Us & Reach Us Section --- */
+        .contact-reach-section {
+            /* Gradient background similar to the image */
+            background: linear-gradient(to bottom, #008080, #004d4d);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .contact-reach-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .contact-reach-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-reach-header p {
+            font-size: 1.1rem;
+            margin-bottom: 50px;
+            opacity: 0.9;
+        }
+
+        .contact-details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+            text-align: left;
+        }
+
+        .contact-detail-item h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-detail-item h3 i {
+            margin-right: 10px;
+        }
+
+        .contact-detail-item p, .contact-detail-item a {
+            color: #eee;
+            line-height: 1.6;
+            font-size: 0.95rem;
+            text-decoration: none;
+        }
+
+        .contact-detail-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Map Container */
+        .map-container {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 768px) {
+            .registrations-container {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .contact-details-grid {
+                text-align: center;
+            }
+            .contact-detail-item h3 {
+                justify-content: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/DIZAET_Logo.png" alt="DIZA Event Ticket">
+            </a>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="about.html" class="active">About Us</a>
+                <a href="help.html">Help</a>
+            </nav>
+
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-register">Login</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="registrations-section">
+        <div class="registrations-container">
+            <div class="registration-block">
+                <img src="images/ssm-logo.png" alt="SSM Logo">
+                <div class="registration-text">
+                    <p>20140307726</p>
+                    <p>(KT0348250-X)</p>
+                </div>
+            </div>
+
+            <div class="registration-block">
+                <img src="images/mof-logo.png" alt="Ministry of Finance Logo">
+                <div class="registration-text">
+                    <p>Registration with</p>
+                    <p><strong>Ministry Of Finance (MOF)</strong></p>
+                    <p>(357-0002321063)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about-hero">
+        <h1>We Are DIZAET</h1>
+        <p>Connecting people through experiences. The future of campus event management is here.</p>
+    </section>
+
+    <section class="mission-section">
+        <div class="mission-container">
+            <i class="fas fa-ticket-alt mission-icon"></i>
+            <h2 style="margin-bottom: 20px;">Our Mission</h2>
+            <p style="line-height: 1.8; color: #555; font-size: 1.1rem;">
+                <b>DIZA Event Ticket (DIZAET)</b> is a web-based platform developed to streamline the event ticketing process for university students and organizers. Born from a collaboration between <b>UiTM</b> and <b>Grab</b>, our goal is to eliminate long queues and manual booking hassles.
+                <br><br>
+                Whether you are an organizer looking to manage attendees efficiently or a student wanting to catch the next big campus concert, DIZAET provides a secure, fast, and user-friendly solution.
+            </p>
+        </div>
+    </section>
+
+    <section class="team-section">
+        <div class="container">
+            <h2>Meet The DIZAZ Group</h2>
+            <p>The developers behind the platform.</p>
+
+            <div class="team-grid">
+                
+                <div class="team-card">
+                    <img src="images/member1profile.png" alt="Member" class="member-img">
+                    <h3 class="member-name">Mohamad Nur Ikhmal</h3>
+                    <p class="member-role">Project Manager</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="images/member2profile.png" alt="Member" class="member-img">
+                    <h3 class="member-name">Tengku Ahmad Danial</h3>
+                    <p class="member-role">System Analyst</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="images/member3profile.png" alt="Member" class="member-img">
+                    <h3 class="member-name">Muhammad 'Athif Dzikri</h3>
+                    <p class="member-role">UI/UX Designer</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <img src="images/member4profile.png" alt="Member" class="member-img">
+                    <h3 class="member-name">Amier Zhafran</h3>
+                    <p class="member-role">Database Designer</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-reach-section">
+        <div class="contact-reach-container">
+            <div class="contact-reach-header">
+                <h2>Find Us & Reach Us</h2>
+                <p>Looking for help? Contact us today for all the details you need!</p>
+            </div>
+
+            <div class="contact-details-grid">
+                <div class="contact-detail-item">
+                    <h3><i class="fas fa-phone-alt"></i> Phone / Mobile</h3>
+                    <p>
+                        <a href="tel:+60139706363">+60 13-970-6363</a> / <br>
+                        <a href="tel:+60182646363">+60 18-264 6363</a>
+                    </p>
+                </div>
+
+                <div class="contact-detail-item">
+                    <h3><i class="fas fa-map-marker-alt"></i> Address</h3>
+                    <p>
+                        395-B Depan Maahad Muhammadi Lelaki,<br>
+                        Jalan Pengkalan Chepa,<br>
+                        15400 Kota Bharu, Kelantan,<br>
+                        Malaysia
+                    </p>
+                </div>
+
+                <div class="contact-detail-item">
+                    <h3><i class="fas fa-envelope"></i> Email</h3>
+                    <p>
+                        <a href="mailto:general@sonicsystemsolution.com">general@sonicsystemsolution.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.483054021412!2d102.25976931476927!3d6.126491995568778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31b6b1f8f0f8f0f9%3A0x401303030303030!2sSONIC%20SYSTEM%20SOLUTION!5e0!3m2!1sen!2smy!4v1678888888888!5m2!1sen!2smy" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            
+            <div class="footer-col brand-col">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZA Event Ticket" class="footer-logo">
+                <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px;"> In Collaboration With </p>
+                
+                <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="images/LOGO UiTM OUTLINE 3 (WHITE).png" 
+                            alt="UiTM" 
+                            style="height: 40px; opacity: 0.8;">
+                        
+                        <span style="color:#555;">|</span>
+                        
+                        <img src="images/Google-Gemini-White-Logo.png" 
+                            alt="Gemini" 
+                            style="height: 40px; opacity: 0.8;">
+                </div>
+
+                <p>Your one-stop platform for all event ticketing needs.</p>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Contact Us</h4>
+                <div class="contact-details">
+                    <p>
+                        <b>Hotline:</b> <br>
+                        +60 16-262 4834 / +60 11-6551 3006
+                    </p>
+                    <p>
+                        <b>Email:</b> <br>
+                        support@grab.uitm.edu.my
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul class="footer-links-list">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="help.html">Contact</a></li>
+                    <li><a href="help.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/modannie"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/modannyyy"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/tadanny._"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/95K89KDhTm"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 DIZAZ Group. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
