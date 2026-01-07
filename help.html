@@ -3,68 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIZA Event Ticket | Help Center</title>
+    <title>DIZA Event Ticket | Support</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
     <style>
-        /* --- Page Specific Styles --- */
-        
-        .help-hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/background1.jpg'); /* You can use a generic event image or a color */
-            background-color: #222; /* Fallback color */
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
+        /* --- CORE VARIABLES --- */
+        :root {
+            --support-dark: #111111;
+            --support-card-bg: #1e1e1e;
+            --support-text-muted: #aaa;
+            --primary-yellow: #f4d03f; /* Standardizing your yellow if not in external css */
         }
 
-        .help-hero h1 {
+        /* --- LAYOUT FIXES --- */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- HERO SECTION --- */
+        .support-hero {
+            /* FIXED: Added url() wrapper to image */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 400px; /* Increased height for better spacing */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            color: white;
+            position: relative;
+        }
+
+        .support-hero h1 {
             font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .support-hero p {
+            font-size: 1.1rem;
+            color: #ddd;
+            margin-bottom: 35px;
+            max-width: 600px;
+        }
+
+        /* --- SEARCH BAR --- */
+        .support-search-container {
+            width: 100%;
+            max-width: 550px;
+            position: relative;
+        }
+
+        .support-search-container input {
+            width: 100%;
+            padding: 18px 25px 18px 55px;
+            border-radius: 50px;
+            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255,255,255,0.15); /* Glass effect */
+            backdrop-filter: blur(10px);
+            color: white;
+            font-size: 16px;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .support-search-container input::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .support-search-container input:focus {
+            background: rgba(255,255,255,0.25);
+            border-color: var(--primary-yellow);
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        .support-search-container i {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-yellow);
+            font-size: 18px;
+            pointer-events: none;
+        }
+
+        /* --- FLOATING CARDS CONTAINER --- */
+        .support-content-wrapper {
+            background-color: var(--support-dark);
+            padding-bottom: 60px;
+            position: relative;
+        }
+
+        .support-grid {
+            max-width: 1100px;
+            margin: -60px auto 0; /* Pulls cards up over the hero */
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10; /* Ensures cards are above the background */
+        }
+
+        .support-card {
+            background: var(--support-card-bg);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+            text-decoration: none;
+            color: white;
+            flex: 1;
+            min-width: 280px;
+            max-width: 320px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .support-card:hover {
+            transform: translateY(-10px);
+            border-top: 4px solid var(--primary-yellow);
+            background: #2a2a2a;
+        }
+
+        .support-card i {
+            font-size: 35px;
+            color: var(--primary-yellow);
+            margin-bottom: 20px;
+            background: rgba(244, 208, 63, 0.1);
+            padding: 20px;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .support-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .support-card p {
+            color: var(--support-text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* --- FAQ SECTION --- */
+        .faq-section {
+            background-color: #f4f6f9; /* Light background for contrast */
+            padding: 80px 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .faq-header h2 {
+            color: #222;
+            font-size: 2rem;
             margin-bottom: 10px;
         }
 
-        .help-container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        /* FAQ Accordion Styles */
         .faq-item {
             background: #fff;
-            border: 1px solid #ddd;
+            border: 1px solid #e1e4e8;
             margin-bottom: 15px;
-            border-radius: 5px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
         }
 
         .faq-question {
-            padding: 20px;
+            padding: 20px 25px;
             cursor: pointer;
-            background-color: #f9f9f9;
+            background-color: #fff;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
             color: #333;
-            transition: background 0.3s;
+            transition: background 0.2s;
         }
 
         .faq-question:hover {
-            background-color: #f1f1f1;
+            background-color: #f8f9fa;
+        }
+
+        .faq-question span {
+            font-size: 1rem;
         }
 
         .faq-question i {
             transition: transform 0.3s;
-            color: #666;
+            color: #999;
+            font-size: 0.9rem;
         }
 
-        /* Class to rotate arrow when open */
         .faq-item.active .faq-question i {
             transform: rotate(180deg);
+            color: var(--primary-yellow); /* Highlight arrow on active */
         }
 
         .faq-answer {
@@ -72,42 +231,75 @@
             overflow: hidden;
             transition: max-height 0.3s ease-out;
             background: #fff;
-            padding: 0 20px;
             color: #555;
             line-height: 1.6;
         }
 
-        /* Reveal answer when active */
         .faq-item.active .faq-answer {
-            padding: 20px;
-            max-height: 200px; /* Approximate height for text */
+            padding: 20px 25px;
+            max-height: 300px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        /* --- CONTACT FORM --- */
+        .contact-section {
+            background-color: #fff;
+            padding: 50px 20px 80px;
+            text-align: center;
             border-top: 1px solid #eee;
         }
 
-        /* Contact Form Section within Help */
-        .contact-section {
-            background-color: #f8f9fa;
-            padding: 50px 20px;
-            text-align: center;
-            margin-top: 60px;
+        .contact-container {
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .contact-form {
-            max-width: 600px;
-            margin: 30px auto 0;
             text-align: left;
+            margin-top: 30px;
         }
 
-        .contact-form textarea {
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+        }
+
+        .form-control {
             width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: inherit;
-            resize: vertical;
-            height: 120px;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+            box-sizing: border-box; /* Fixes padding width issue */
         }
 
+        .form-control:focus {
+            border-color: #333;
+            outline: none;
+        }
+
+        textarea.form-control {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* --- RESPONSIVE --- */
+        @media (max-width: 768px) {
+            .support-hero {
+                height: auto;
+                padding: 60px 20px 100px; /* Extra bottom padding for cards */
+            }
+            .support-grid {
+                margin-top: -80px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -122,91 +314,124 @@
                 <a href="index.html">Home</a>
                 <a href="events.html">Events</a>
                 <a href="about.html">About Us</a>
-                <a href="help.html" class="active">Help</a> </nav>
+                <a href="help.html" class="active">Help</a>
+            </nav>
 
             <div class="auth-buttons">
-                <a href="login.html" class="btn-register">Login</a>
+                <a href="login.html" class="btn-login">Log In</a>
+                <a href="register.html" class="btn-register">Register</a>
             </div>
         </div>
     </header>
 
-    <section class="help-hero">
+    <section class="support-hero">
         <h1>How can we help you?</h1>
-        <p>Browse our frequently asked questions or contact our support team.</p>
+        <p>Search our knowledge base or select a category below.</p>
+        
+        <div class="support-search-container">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search for answers...">
+        </div>
     </section>
 
-    <div class="help-container">
-        <h2 style="text-align: center; margin-bottom: 30px; color: #333;">Frequently Asked Questions</h2>
+    <div class="support-content-wrapper">
+        <div class="support-grid">
+            <a href="#" class="support-card">
+                <i class="fas fa-ticket-alt"></i>
+                <h3>Tickets & Bookings</h3>
+                <p>Track your purchase, request refunds, or fix issues with event entry tickets.</p>
+            </a>
 
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>How do I create an account?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Click on the "Register" button at the top right corner. You can choose to register as an <b>Attendee</b> to buy tickets or an <b>Organizer</b> to host your own events.</p>
-            </div>
+            <a href="#" class="support-card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Account Support</h3>
+                <p>Manage your login details, reset passwords, and update your personal info.</p>
+            </a>
+
+            <a href="#" class="support-card">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Event Organizers</h3>
+                <p>Access tools for creating events, managing sales, and viewing analytics.</p>
+            </a>
         </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Can I get a refund for my ticket?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Refund policies depend on the specific event organizer. Generally, tickets are non-refundable unless the event is cancelled. Please check the specific event details page.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>How do I download my ticket?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Once you have purchased a ticket, log in to your account and go to your <b>Dashboard</b>. You will find a "My Tickets" section where you can download the PDF or view the QR code.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>I am an Organizer. How do I get verified?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>After registering as an organizer, you must submit your organization details in the profile settings. Our Admin team will review your application within 24-48 hours.</p>
-            </div>
-        </div>
-
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>I forgot my password. What should I do?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Go to the Login page and click "Forgot Password?". Enter your registered email address, and we will send you a link to reset your password.</p>
-            </div>
-        </div>
-
     </div>
 
+    <section class="faq-section">
+        <div class="faq-container">
+            <div class="faq-header">
+                <h2>Frequently Asked Questions</h2>
+                <p>Quick answers to common questions about DIZA Event Ticket.</p>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I create an account?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Click on the "Register" button at the top right corner. You can choose to register as an <b>Attendee</b> to buy tickets or an <b>Organizer</b> to host your own events.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>Can I get a refund for my ticket?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Refund policies depend on the specific event organizer. Generally, tickets are non-refundable unless the event is cancelled. Please check the specific event details page.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I download my ticket?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Once you have purchased a ticket, log in to your account and go to your <b>Dashboard</b>. You will find a "My Tickets" section where you can download the PDF or view the QR code.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>I am an Organizer. How do I get verified?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>After registering as an organizer, you must submit your organization details in the profile settings. Our Admin team will review your application within 24-48 hours.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>I forgot my password. What should I do?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Go to the Login page and click "Forgot Password?". Enter your registered email address, and we will send you a link to reset your password.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="contact-section">
-        <div class="container">
+        <div class="contact-container">
             <h2>Still need help?</h2>
             <p>Send us a message and we'll get back to you shortly.</p>
             
             <form class="contact-form">
-                <div style="margin-bottom: 15px;">
+                <div class="form-group">
                     <label>Your Email</label>
-                    <input type="email" style="width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 5px;" placeholder="name@example.com">
+                    <input type="email" class="form-control" placeholder="name@example.com">
                 </div>
-                <div style="margin-bottom: 15px;">
+                <div class="form-group">
                     <label>Subject</label>
-                    <input type="text" style="width: 100%; padding: 10px; box-sizing: border-box; border: 1px solid #ccc; border-radius: 5px;" placeholder="Brief summary of issue">
+                    <input type="text" class="form-control" placeholder="Brief summary of issue">
                 </div>
-                <div style="margin-bottom: 15px;">
+                <div class="form-group">
                     <label>Message</label>
-                    <textarea placeholder="Describe your issue in detail..."></textarea>
+                    <textarea class="form-control" placeholder="Describe your issue in detail..."></textarea>
                 </div>
                 <button type="submit" class="btn-auth-submit" style="width: 200px;">Send Message</button>
             </form>
@@ -253,7 +478,7 @@
                 <h4>Support</h4>
                 <ul class="footer-links-list">
                     <li><a href="about.html">About Us</a></li>
-                    <li><a href="help.html">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                     <li><a href="help.html">FAQ</a></li>
                 </ul>
             </div>
@@ -285,12 +510,13 @@
                 // Toggle the active class
                 item.classList.toggle('active');
 
-                // Optional: Close others when one opens (Accordion effect)
-                /* document.querySelectorAll('.faq-item').forEach(otherItem => {
+                // Optional: Close others when one opens
+                /*
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
                     if (otherItem !== item) {
                         otherItem.classList.remove('active');
                     }
-                }); 
+                });
                 */
             });
         });
