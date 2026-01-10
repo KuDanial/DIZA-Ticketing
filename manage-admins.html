@@ -362,6 +362,20 @@
         .page-btn:hover:not(.active) {
             background-color: #f4f6f9;
         }
+        /* Add this class for the logo */
+        .brand-logo {
+            width: 120px; /* Adjust this value to change the logo size */
+            height: auto;
+            margin-bottom: 10px; /* Adds space between the logo and the text */
+            display: block;
+            margin-left: auto;
+            margin-right: auto; /* Centers the image */
+        }
+
+        /* Optional: You might want to adjust the brand padding if it becomes too tall */
+        .brand {
+            padding: 20px; /* Slightly reduced top/bottom padding */
+        }
     </style>
 </head>
 <body>
@@ -370,6 +384,7 @@
         
         <aside class="sidebar">
             <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
                 <h2>EventApp <span class="badge">ADMIN</span></h2>
             </div>
             
@@ -405,7 +420,7 @@
 
                 <div class="user-menu">
                     <button class="user-btn" onclick="toggleDropdown()">
-                        <img src="https://via.placeholder.com/40" alt="Admin" class="avatar">
+                        <img src="https://ui-avatars.com/api" alt="Admin" class="avatar">
                         <span class="username">Super Admin</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
@@ -451,7 +466,7 @@
                                     <td>#ADM-001</td>
                                     <td>
                                         <div class="user-cell">
-                                            <img src="https://via.placeholder.com/36" alt="Admin">
+                                            <img src="https://ui-avatars.com/api" alt="Admin">
                                             <div class="user-info">
                                                 <span class="name">Super Admin</span>
                                                 <span class="email">admin@eventapp.com</span>
@@ -470,14 +485,14 @@
                                     <td>#ADM-002</td>
                                     <td>
                                         <div class="user-cell">
-                                            <img src="https://via.placeholder.com/36" alt="Admin">
+                                            <img src="https://ui-avatars.com/api" alt="Admin">
                                             <div class="user-info">
                                                 <span class="name">Sarah Connor</span>
                                                 <span class="email">sarah.c@eventapp.com</span>
                                             </div>
                                         </div>
                                     </td>
-                                    <td><span class="role-badge moderator">Moderator</span></td>
+                                    <td><span class="role-badge moderator">Admin</span></td>
                                     <td>2 hours ago</td>
                                     <td><span class="status active">Active</span></td>
                                     <td class="text-right">
@@ -490,14 +505,14 @@
                                     <td>#ADM-003</td>
                                     <td>
                                         <div class="user-cell">
-                                            <img src="https://via.placeholder.com/36" alt="Admin">
+                                            <img src="https://ui-avatars.com/api" alt="Admin">
                                             <div class="user-info">
                                                 <span class="name">John Smith</span>
                                                 <span class="email">john.s@eventapp.com</span>
                                             </div>
                                         </div>
                                     </td>
-                                    <td><span class="role-badge moderator">Editor</span></td>
+                                    <td><span class="role-badge moderator">Admin</span></td>
                                     <td>30 days ago</td>
                                     <td><span class="status inactive">Inactive</span></td>
                                     <td class="text-right">

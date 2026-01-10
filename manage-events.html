@@ -258,27 +258,26 @@
             vertical-align: middle;
         }
 
-        /* Event Cell (Thumb + Info) */
-        .event-cell {
-            display: flex;
-            align-items: center;
-            gap: 12px;
+        
+        
+        .col-title { font-weight: 600; color: #333; font-size: 15px; }
+        
+        .col-desc { 
+            max-width: 200px; 
+            white-space: nowrap; 
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            color: #777; 
+            font-size: 13px;
         }
 
-        .event-cell img {
-            width: 50px;
-            height: 35px;
-            border-radius: 4px;
-            object-fit: cover;
-        }
+        .col-price { font-weight: 600; color: #27ae60; }
 
-        .event-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .event-info .title { font-weight: 600; color: #333; }
-        .event-info .date { font-size: 12px; color: #888; }
+        .venue-info { display: flex; flex-direction: column; font-size: 13px; }
+        .venue-name { font-weight: 600; color: #555; }
+        .venue-addr { font-size: 11px; color: #999; margin-top: 2px; }
+        
+        .organizer-info { font-weight: 600; color: #3498db; }
 
         /* Badges */
         .status {
@@ -351,6 +350,19 @@
         .page-btn:hover:not(.active) {
             background-color: #f4f6f9;
         }
+        
+        .brand-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .brand {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
@@ -359,32 +371,18 @@
         
         <aside class="sidebar">
             <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
                 <h2>EventApp <span class="badge">ADMIN</span></h2>
             </div>
             
             <ul class="nav-links">
-                <li>
-                    <a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
-                </li>
-                
+                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
                 <li class="menu-header">User Management</li>
-                
-                <li>
-                    <a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a>
-                </li>
-                
-                <li>
-                    <a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a>
-                </li>
-                
-                <li class="active">
-                    <a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a>
-                </li>
-
+                <li><a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a></li>
+                <li><a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a></li>
+                <li class="active"><a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
                 <li class="menu-header">System</li>
-                <li>
-                    <a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a>
-                </li>
+                <li><a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
             </ul>
         </aside>
 
@@ -397,7 +395,7 @@
 
                 <div class="user-menu">
                     <button class="user-btn" onclick="toggleDropdown()">
-                        <img src="https://via.placeholder.com/40" alt="Admin" class="avatar">
+                        <img src="https://ui-avatars.com/api" alt="Admin" class="avatar">
                         <span class="username">Super Admin</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
@@ -408,7 +406,7 @@
                         </div>
                         <a href="admin-profile.html"><i class="fas fa-user-cog"></i> My Profile</a>
                         <div class="divider"></div>
-                        <a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                        <a href="logout.html" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                     </div>
                 </div>
             </header>
@@ -419,7 +417,7 @@
                     <div class="table-controls">
                         <div class="search-wrapper">
                             <i class="fas fa-search"></i>
-                            <input type="text" placeholder="Search events...">
+                            <input type="text" placeholder="Search events by title, venue, or ID...">
                         </div>
                         <button class="btn-primary">
                             <i class="fas fa-plus"></i> Create Event
@@ -431,27 +429,30 @@
                             <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>Event Details</th>
+                                    <th>Title</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Venue Info</th>
                                     <th>Organizer</th>
-                                    <th>Ticket Sales</th>
                                     <th>Status</th>
                                     <th class="text-right">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>#E-800</td>
+                                    <td class="col-id">#E-800</td>
+                                    <td class="col-title">Tech Innovation Summit</td>
+                                    <td class="col-desc" title="Annual summit for tech leaders to discuss AI and Future Tech.">
+                                        Annual summit for tech leaders...
+                                    </td>
+                                    <td class="col-price">$150.00</td>
                                     <td>
-                                        <div class="event-cell">
-                                            <img src="https://via.placeholder.com/60x40" alt="Event Thumb">
-                                            <div class="event-info">
-                                                <span class="title">Tech Innovation Summit 2024</span>
-                                                <span class="date">Dec 12, 2024</span>
-                                            </div>
+                                        <div class="venue-info">
+                                            <span class="venue-name">KL Conv Ctr</span>
+                                            <span class="venue-addr">Jalan Pinang, KL</span>
                                         </div>
                                     </td>
-                                    <td>Tech Giants Co.</td>
-                                    <td>350 / 500</td>
+                                    <td class="organizer-info">Tech Giants Co.</td>
                                     <td><span class="status published">Published</span></td>
                                     <td class="text-right">
                                         <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>
@@ -460,18 +461,19 @@
                                 </tr>
 
                                 <tr>
-                                    <td>#E-805</td>
+                                    <td class="col-id">#E-805</td>
+                                    <td class="col-title">Local Art Showcase</td>
+                                    <td class="col-desc" title="A gathering of local artists displaying modern art.">
+                                        A gathering of local artists...
+                                    </td>
+                                    <td class="col-price">$25.00</td>
                                     <td>
-                                        <div class="event-cell">
-                                            <img src="https://via.placeholder.com/60x40" alt="Event Thumb">
-                                            <div class="event-info">
-                                                <span class="title">Local Art Showcase</span>
-                                                <span class="date">Jan 15, 2025</span>
-                                            </div>
+                                        <div class="venue-info">
+                                            <span class="venue-name">Art Gallery Ex</span>
+                                            <span class="venue-addr">Bangsar, KL</span>
                                         </div>
                                     </td>
-                                    <td>Art Gallery Ex</td>
-                                    <td>0 / 100</td>
+                                    <td class="organizer-info">Art Gallery Ex</td>
                                     <td><span class="status draft">Draft</span></td>
                                     <td class="text-right">
                                         <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>
@@ -480,18 +482,19 @@
                                 </tr>
 
                                 <tr>
-                                    <td>#E-812</td>
+                                    <td class="col-id">#E-812</td>
+                                    <td class="col-title">Summer Music Fest</td>
+                                    <td class="col-desc" title="Outdoor music festival featuring top local bands.">
+                                        Outdoor music festival featuring...
+                                    </td>
+                                    <td class="col-price">$80.00</td>
                                     <td>
-                                        <div class="event-cell">
-                                            <img src="https://via.placeholder.com/60x40" alt="Event Thumb">
-                                            <div class="event-info">
-                                                <span class="title">Summer Music Festival</span>
-                                                <span class="date">Jul 20, 2024</span>
-                                            </div>
+                                        <div class="venue-info">
+                                            <span class="venue-name">Sepang Circuit</span>
+                                            <span class="venue-addr">Sepang, Selangor</span>
                                         </div>
                                     </td>
-                                    <td>Global Music Festival</td>
-                                    <td>1,200 / 2,000</td>
+                                    <td class="organizer-info">Global Music Fest</td>
                                     <td><span class="status published">Published</span></td>
                                     <td class="text-right">
                                         <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>
@@ -500,18 +503,19 @@
                                 </tr>
 
                                 <tr>
-                                    <td>#E-750</td>
+                                    <td class="col-id">#E-750</td>
+                                    <td class="col-title">Legacy Coding Bootcamp</td>
+                                    <td class="col-desc" title="Intensive coding workshop for legacy systems.">
+                                        Intensive coding workshop...
+                                    </td>
+                                    <td class="col-price">$500.00</td>
                                     <td>
-                                        <div class="event-cell">
-                                            <img src="https://via.placeholder.com/60x40" alt="Event Thumb">
-                                            <div class="event-info">
-                                                <span class="title">Legacy Coding Bootcamp</span>
-                                                <span class="date">Sep 01, 2023</span>
-                                            </div>
+                                        <div class="venue-info">
+                                            <span class="venue-name">Tech Hub</span>
+                                            <span class="venue-addr">Cyberjaya</span>
                                         </div>
                                     </td>
-                                    <td>Tech Giants Co.</td>
-                                    <td>50 / 50</td>
+                                    <td class="organizer-info">Tech Giants Co.</td>
                                     <td><span class="status past">Past</span></td>
                                     <td class="text-right">
                                         <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>

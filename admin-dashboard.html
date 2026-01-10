@@ -293,6 +293,20 @@
         color: #e74c3c;
     }
     .btn-action.delete:hover { background-color: #e74c3c; color: white; }
+    /* Add this class for the logo */
+    .brand-logo {
+        width: 120px; /* Adjust this value to change the logo size */
+        height: auto;
+        margin-bottom: 10px; /* Adds space between the logo and the text */
+        display: block;
+        margin-left: auto;
+        margin-right: auto; /* Centers the image */
+    }
+
+    /* Optional: You might want to adjust the brand padding if it becomes too tall */
+    .brand {
+        padding: 20px; /* Slightly reduced top/bottom padding */
+    }
 </style>
 <body>
 
@@ -300,6 +314,7 @@
         
         <aside class="sidebar">
             <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
                 <h2>EventApp <span class="badge">ADMIN</span></h2>
             </div>
             
@@ -339,7 +354,7 @@
 
                 <div class="user-menu">
                     <button class="user-btn" onclick="toggleDropdown()">
-                        <img src="images/member2profile.png" alt="Admin" class="avatar">
+                        <img src="https://ui-avatars.com/api" alt="Admin" class="avatar">
                         <span class="username">Super Admin</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
@@ -360,7 +375,7 @@
                     <div class="stat-icon purple"><i class="fas fa-users"></i></div>
                     <div class="stat-info">
                         <h3>2,450</h3>
-                        <p>Total Users (Attendee + Org)</p>
+                        <p>Total Users (Attendees & Organizers)</p>
                     </div>
                 </div>
                 
@@ -381,58 +396,7 @@
                 </div>
             </div>
 
-            <div class="content-section">
-                <div class="section-header">
-                    <h2>Recent Data Overview</h2>
-                    <button class="btn-primary"><i class="fas fa-plus"></i> Create New</button>
-                </div>
-                
-                <div class="table-responsive">
-                    <table class="styled-table">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Name / Title</th>
-                                <th>Role / Category</th>
-                                <th>Status</th>
-                                <th class="text-right">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>#U-101</td>
-                                <td><strong>Tech Events Co.</strong></td>
-                                <td>Organizer</td>
-                                <td><span class="status active">Active</span></td>
-                                <td class="text-right">
-                                    <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>
-                                    <button class="btn-action delete" title="Delete"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#U-205</td>
-                                <td>Jane Doe</td>
-                                <td>Attendee</td>
-                                <td><span class="status active">Active</span></td>
-                                <td class="text-right">
-                                    <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>
-                                    <button class="btn-action delete" title="Delete"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#E-88</td>
-                                <td>Summer Music Fest</td>
-                                <td>Event</td>
-                                <td><span class="status active">Published</span></td>
-                                <td class="text-right">
-                                    <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>
-                                    <button class="btn-action delete" title="Delete"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+            
 
         </main>
     </div>

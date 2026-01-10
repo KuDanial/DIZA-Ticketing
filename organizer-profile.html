@@ -301,7 +301,20 @@
             transition: 0.2s;
         }
         .btn-outline:hover { background-color: #4834d4; color: white; }
+        /* Add this class for the logo */
+        .brand-logo {
+            width: 120px; /* Adjust this value to change the logo size */
+            height: auto;
+            margin-bottom: 10px; /* Adds space between the logo and the text */
+            display: block;
+            margin-left: auto;
+            margin-right: auto; /* Centers the image */
+        }
 
+        /* Optional: You might want to adjust the brand padding if it becomes too tall */
+        .brand {
+            padding: 20px; /* Slightly reduced top/bottom padding */
+        }
     </style>
 </head>
 <body>
@@ -310,12 +323,13 @@
         
         <aside class="sidebar">
             <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
                 <h2>EventApp <span class="badge">ORG</span></h2>
             </div>
             
             <ul class="nav-links">
                 <li>
-                    <a href="organizer-dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                    <a href="organizer-dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
                 </li>
                 
                 <li class="menu-header">My Events</li>
@@ -324,11 +338,6 @@
                 </li>
                 <li>
                     <a href="organizer-events.html"><i class="fas fa-calendar-alt"></i> My Events List</a>
-                </li>
-                
-                <li class="menu-header">Reports</li>
-                <li>
-                    <a href="organizer-sales.html"><i class="fas fa-chart-line"></i> Ticket Sales</a>
                 </li>
                 
                 <li class="menu-header">Account</li>
@@ -347,14 +356,14 @@
 
                 <div class="user-menu">
                     <button class="user-btn" onclick="toggleDropdown()">
-                        <img src="https://via.placeholder.com/40" alt="Org" class="avatar">
+                        <img src="https://ui-avatars.com/api" alt="Org" class="avatar">
                         <span class="username">Tech Giants Co.</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     
                     <div class="dropdown-content" id="orgDropdown">
                         <div class="dropdown-header">
-                            <p>Organizer Account</p>
+                            <p>Logged in as Organizer</p>
                         </div>
                         <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> My Profile</a>
                         <div class="divider"></div>
@@ -370,7 +379,7 @@
                     <div class="profile-left">
                         <div class="card profile-card">
                             <div class="profile-img-container">
-                                <img src="https://via.placeholder.com/150" alt="Avatar">
+                                <img src="https://ui-avatars.com/api" alt="Avatar">
                                 <button class="edit-avatar-btn" title="Change Avatar"><i class="fas fa-camera"></i></button>
                             </div>
                             <h2 style="font-size: 20px;">John Doe</h2> 

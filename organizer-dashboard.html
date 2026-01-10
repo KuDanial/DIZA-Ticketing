@@ -317,6 +317,20 @@
             transition: 0.2s;
         }
         .btn-icon:hover { background-color: #f1f2f6; color: #4834d4; }
+        /* Add this class for the logo */
+        .brand-logo {
+            width: 120px; /* Adjust this value to change the logo size */
+            height: auto;
+            margin-bottom: 10px; /* Adds space between the logo and the text */
+            display: block;
+            margin-left: auto;
+            margin-right: auto; /* Centers the image */
+        }
+
+        /* Optional: You might want to adjust the brand padding if it becomes too tall */
+        .brand {
+            padding: 20px; /* Slightly reduced top/bottom padding */
+        }
     </style>
 </head>
 <body>
@@ -325,12 +339,13 @@
         
         <aside class="sidebar">
             <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
                 <h2>EventApp <span class="badge">ORG</span></h2>
             </div>
             
             <ul class="nav-links">
                 <li class="active">
-                    <a href="organizer-dashboard.html"><i class="fas fa-th-large"></i> Dashboard</a>
+                    <a href="organizer-dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
                 </li>
                 
                 <li class="menu-header">My Events</li>
@@ -339,11 +354,6 @@
                 </li>
                 <li>
                     <a href="organizer-events.html"><i class="fas fa-calendar-alt"></i> My Events List</a>
-                </li>
-                
-                <li class="menu-header">Reports</li>
-                <li>
-                    <a href="organizer-sales.html"><i class="fas fa-chart-line"></i> Ticket Sales</a>
                 </li>
                 
                 <li class="menu-header">Account</li>
@@ -362,14 +372,14 @@
 
                 <div class="user-menu">
                     <button class="user-btn" onclick="toggleDropdown()">
-                        <img src="https://via.placeholder.com/40" alt="Org" class="avatar">
+                        <img src="https://ui-avatars.com/api" alt="Org" class="avatar">
                         <span class="username">Tech Giants Co.</span>
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     
                     <div class="dropdown-content" id="orgDropdown">
                         <div class="dropdown-header">
-                            <p>Organizer Account</p>
+                            <p>Logged in as Organizer</p>
                         </div>
                         <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> My Profile</a>
                         <div class="divider"></div>
@@ -408,100 +418,7 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="section-header">
-                    <h3>My Recent Events</h3>
-                    <a href="organizer-create-event.html" class="btn-create">
-                        <i class="fas fa-plus"></i> Create Event
-                    </a>
-                </div>
-
-                <div class="card">
-                    <div class="table-responsive">
-                        <table class="styled-table">
-                            <thead>
-                                <tr>
-                                    <th>Event Name</th>
-                                    <th>Date</th>
-                                    <th>Sales Status</th>
-                                    <th>Status</th>
-                                    <th>Quick Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        <div class="event-cell">
-                                            <img src="https://via.placeholder.com/50x35" alt="Event">
-                                            <div class="event-info">
-                                                <span class="title">Tech Innovation Summit</span>
-                                                <span class="date">Dec 12, 2024</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>In 30 Days</td>
-                                    <td>
-                                        <div class="sales-text">350 / 500 Sold</div>
-                                        <div class="progress-bar">
-                                            <div class="progress-fill" style="width: 70%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="status published">Published</span></td>
-                                    <td>
-                                        <button class="btn-icon" title="View Attendees"><i class="fas fa-users"></i></button>
-                                        <button class="btn-icon" title="Edit Event"><i class="fas fa-pen"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="event-cell">
-                                            <img src="https://via.placeholder.com/50x35" alt="Event">
-                                            <div class="event-info">
-                                                <span class="title">AI Workshop: Basic</span>
-                                                <span class="date">Jan 05, 2025</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>In 55 Days</td>
-                                    <td>
-                                        <div class="sales-text">12 / 50 Sold</div>
-                                        <div class="progress-bar">
-                                            <div class="progress-fill" style="width: 24%"></div>
-                                        </div>
-                                    </td>
-                                    <td><span class="status published">Published</span></td>
-                                    <td>
-                                        <button class="btn-icon" title="View Attendees"><i class="fas fa-users"></i></button>
-                                        <button class="btn-icon" title="Edit Event"><i class="fas fa-pen"></i></button>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td>
-                                        <div class="event-cell">
-                                            <img src="https://via.placeholder.com/50x35" alt="Event">
-                                            <div class="event-info">
-                                                <span class="title">Summer Meetup 2025</span>
-                                                <span class="date">TBD</span>
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td>Not Set</td>
-                                    <td>
-                                        <div class="sales-text">-</div>
-                                    </td>
-                                    <td><span class="status draft">Draft</span></td>
-                                    <td>
-                                        <button class="btn-icon" title="Edit Draft"><i class="fas fa-pen"></i></button>
-                                        <button class="btn-icon" title="Delete"><i class="fas fa-trash"></i></button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
+                
             </div>
         </main>
     </div>

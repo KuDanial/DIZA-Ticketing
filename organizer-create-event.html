@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Event - Organizer Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* ============================
+           1. BASE & LAYOUT STYLES
+           ============================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .dashboard-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- SIDEBAR (Organizer Theme: Dark Indigo) --- */
+        .sidebar {
+            width: 260px;
+            background-color: #30336b;
+            color: #ecf0f1;
+            display: flex;
+            flex-direction: column;
+            position: fixed;
+            height: 100%;
+            left: 0;
+            top: 0;
+        }
+
+        .brand {
+            padding: 20px;
+            background-color: #130f40;
+            text-align: center;
+            border-bottom: 1px solid #4834d4;
+        }
+
+        .brand-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .brand .badge {
+            background-color: #f9ca24;
+            color: #333;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            vertical-align: middle;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        .nav-links { margin-top: 20px; }
+
+        .menu-header {
+            padding: 15px 25px 5px 25px;
+            font-size: 11px;
+            text-transform: uppercase;
+            color: #a4b0be;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .nav-links li a {
+            display: block;
+            padding: 12px 25px;
+            color: #dff9fb;
+            transition: 0.3s;
+            border-left: 4px solid transparent;
+            font-size: 14px;
+        }
+
+        .nav-links li a:hover, 
+        .nav-links li.active a {
+            background-color: #4834d4;
+            color: white;
+            border-left: 4px solid #f9ca24;
+        }
+
+        .nav-links i { margin-right: 12px; width: 20px; text-align: center;}
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            flex: 1;
+            margin-left: 260px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- TOP BAR --- */
+        .top-bar {
+            background-color: white;
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .page-title h1 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #30336b;
+        }
+
+        /* --- USER MENU DROPDOWN --- */
+        .user-menu { position: relative; }
+
+        .user-btn {
+            background: none;
+            border: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            gap: 10px;
+        }
+
+        .avatar { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; border: 2px solid #eee; }
+        .username { font-weight: 600; color: #333; }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 55px;
+            background-color: white;
+            min-width: 200px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            border: 1px solid #eee;
+            z-index: 100;
+        }
+
+        .dropdown-content.show { display: block; }
+
+        .dropdown-header {
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-bottom: 1px solid #eee;
+            font-size: 12px;
+            color: #888;
+        }
+
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            color: #333;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+
+        .dropdown-content a:hover { background-color: #f1f5f9; color: #4834d4; }
+        .dropdown-content a.logout { color: #e74c3c; }
+        .divider { border-top: 1px solid #eee; }
+
+        /* ============================
+           2. CONTENT & FORM STYLES
+           ============================ */
+
+        .content-padding { padding: 30px; }
+
+        .card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+            overflow: hidden;
+            padding: 30px;
+        }
+
+        /* Form Grid Layout */
+        .form-section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #30336b;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+        
+        /* Remove margin-top for the first title */
+        .form-section-title:first-child { margin-top: 0; }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+        }
+
+        .form-label span { color: #e74c3c; margin-left: 2px; }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #dcdfe6;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #333;
+            outline: none;
+            transition: 0.3s;
+            background-color: white;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            border-color: #4834d4;
+            box-shadow: 0 0 0 3px rgba(72, 52, 212, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        /* File Upload Styling */
+        .file-upload-box {
+            border: 2px dashed #dcdfe6;
+            padding: 40px;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.2s;
+            color: #888;
+            background-color: #fafbfc;
+        }
+
+        .file-upload-box:hover {
+            border-color: #4834d4;
+            color: #4834d4;
+            background: #f0f0ff;
+        }
+
+        .upload-icon { font-size: 30px; margin-bottom: 10px; display: block; }
+
+        /* Form Actions */
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: flex-end;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .btn-submit {
+            background-color: #4834d4;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-submit:hover { background-color: #30336b; }
+
+        .btn-cancel {
+            background-color: white;
+            color: #555;
+            border: 1px solid #dcdfe6;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .btn-cancel:hover { background-color: #f4f6f9; color: #333; }
+
+        /* Responsive Fix for form */
+        @media (max-width: 768px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
+                <h2>EventApp <span class="badge">ORG</span></h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li>
+                    <a href="organizer-dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                
+                <li class="menu-header">My Events</li>
+                
+                <li class="active">
+                    <a href="organizer-create-event.html"><i class="fas fa-plus-circle"></i> Create New Event</a>
+                </li>
+                
+                <li>
+                    <a href="organizer-events.html"><i class="fas fa-calendar-alt"></i> My Events List</a>
+                </li>
+                
+                <li class="menu-header">Account</li>
+                <li>
+                    <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> Org Profile</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1>Create New Event</h1>
+                </div>
+
+                <div class="user-menu">
+                    <button class="user-btn" onclick="toggleDropdown()">
+                        <img src="https://ui-avatars.com/api" alt="Org" class="avatar">
+                        <span class="username">Tech Giants Co.</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="dropdown-content" id="orgDropdown">
+                        <div class="dropdown-header">
+                            <p>Organizer Account</p>
+                        </div>
+                        <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> My Profile</a>
+                        <div class="divider"></div>
+                        <a href="logout.html" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-padding">
+                <div class="card">
+                    <form action="#" method="POST">
+                        
+                        <div class="form-section-title">Basic Information</div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Event Title <span>*</span></label>
+                            <input type="text" class="form-input" placeholder="e.g. Annual Tech Summit 2024" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Category <span>*</span></label>
+                                <select class="form-select" required>
+                                    <option value="" disabled selected>Select Category</option>
+                                    <option value="tech">Technology</option>
+                                    <option value="music">Music & Concerts</option>
+                                    <option value="education">Education & Workshops</option>
+                                    <option value="business">Business & Networking</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Event Status</label>
+                                <select class="form-select">
+                                    <option value="draft">Draft (Hidden)</option>
+                                    <option value="published">Published (Public)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Description <span>*</span></label>
+                            <textarea class="form-textarea" placeholder="Describe what attendees can expect..." required></textarea>
+                        </div>
+
+                        <div class="form-section-title">Date & Venue</div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Venue Name <span>*</span></label>
+                                <input type="text" class="form-input" placeholder="e.g. KL Convention Centre" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Venue Capacity <span>*</span></label>
+                                <input type="number" class="form-input" placeholder="Total seats available" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Full Address <span>*</span></label>
+                            <input type="text" class="form-input" placeholder="Street address, City, State" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Start Date & Time <span>*</span></label>
+                                <input type="datetime-local" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">End Date & Time <span>*</span></label>
+                                <input type="datetime-local" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Ticket & Pricing</div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Price per Ticket (RM) <span>*</span></label>
+                                <input type="number" class="form-input" placeholder="0.00 for Free" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Ticket Quantity</label>
+                                <input type="number" class="form-input" placeholder="Available for sale">
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Event Media</div>
+
+                        <div class="form-group">
+                            <label class="form-label">Event Banner Image</label>
+                            <div class="file-upload-box">
+                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                <p>Click to upload or drag and drop</p>
+                                <span style="font-size: 12px;">(Max size: 5MB, JPG/PNG)</span>
+                                <input type="file" style="display: none;">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel">Cancel</button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-check"></i> Publish Event
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById("orgDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.closest('.user-btn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        
+        // Simple script to trigger file input click
+        document.querySelector('.file-upload-box').addEventListener('click', function() {
+            this.querySelector('input[type="file"]').click();
+        });
+    </script>
+</body>
+</html>
