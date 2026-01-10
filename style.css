@@ -38,7 +38,7 @@ ul { list-style: none; }
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 10px 0; /* Slightly tighter padding */
+    padding: 10px 0;
 }
 
 .nav-container {
@@ -54,8 +54,7 @@ ul { list-style: none; }
 }
 
 .logo img {
-    /* Adjusted height for standalone logo */
-    height: 60px; 
+    height: 60px;
     width: auto;
     object-fit: contain;
 }
@@ -102,11 +101,11 @@ ul { list-style: none; }
     color: var(--primary-yellow);
 }
 
-/* ================= AUTH BUTTONS (FIXED) ================= */
+/* ================= AUTH BUTTONS ================= */
 .auth-buttons {
-    display: flex;       /* Forces buttons to be side-by-side */
-    align-items: center; /* Vertically aligns them */
-    gap: 15px;           /* Adds space between buttons */
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
 .auth-buttons a {
@@ -114,7 +113,7 @@ ul { list-style: none; }
     border-radius: 5px;
     font-weight: 600;
     font-size: 14px;
-    white-space: nowrap; /* Prevents text from wrapping */
+    white-space: nowrap;
     transition: 0.3s;
 }
 
@@ -169,7 +168,7 @@ ul { list-style: none; }
 
 /* ================= SEARCH WIDGET ================= */
 .filter-section {
-    margin-top: -40px; 
+    margin-top: -40px;
     position: relative;
     z-index: 10;
 }
@@ -182,7 +181,7 @@ ul { list-style: none; }
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
-    align-items: flex-end; /* Aligns button with inputs */
+    align-items: flex-end;
 }
 
 .input-group {
@@ -343,7 +342,6 @@ footer {
     min-width: 200px;
 }
 
-/* Footer Logo Styling */
 .footer-logo {
     height: 80px;
     margin-bottom: 15px;
@@ -357,7 +355,6 @@ footer {
     letter-spacing: 1px;
 }
 
-/* Contact Details */
 .contact-details p {
     margin-bottom: 15px;
     line-height: 1.6;
@@ -369,7 +366,6 @@ footer {
     color: var(--white);
 }
 
-/* Footer Links */
 .footer-links-list li {
     margin-bottom: 10px;
 }
@@ -381,10 +377,9 @@ footer {
 
 .footer-links-list a:hover {
     color: var(--primary-yellow);
-    padding-left: 5px; /* Slide effect */
+    padding-left: 5px;
 }
 
-/* Social Icons */
 .footer-social a {
     display: inline-flex;
     justify-content: center;
@@ -413,13 +408,13 @@ footer {
     border-top: 1px solid #333;
 }
 
-/* ================= AUTH PAGES (LOGIN / REGISTER) ================= */
+/* ================= AUTH PAGES ================= */
 .auth-section {
-    min-height: 80vh; /* Takes up most of the screen */
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f0f2f5; /* Slightly darker than white for contrast */
+    background: #f0f2f5;
     padding: 40px 20px;
 }
 
@@ -432,7 +427,7 @@ footer {
     background: var(--white);
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.1); /* Soft shadow for depth */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
     text-align: center;
 }
 
@@ -449,7 +444,6 @@ footer {
     margin-bottom: 30px;
 }
 
-/* Form Styling */
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -462,7 +456,11 @@ footer {
     color: var(--text-dark);
 }
 
-.form-group input {
+.form-group label span {
+    color: #e74c3c;
+}
+
+.form-group input, .form-group select {
     width: 100%;
     padding: 12px 15px;
     border: 1px solid #ddd;
@@ -477,7 +475,6 @@ footer {
     box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.2);
 }
 
-/* Password Eye Icon Wrapper */
 .password-wrapper {
     position: relative;
 }
@@ -491,7 +488,6 @@ footer {
     color: var(--text-light);
 }
 
-/* Form Actions */
 .form-actions {
     display: flex;
     justify-content: flex-end;
@@ -509,7 +505,6 @@ footer {
     text-decoration: underline;
 }
 
-/* Login Button */
 .btn-auth-submit {
     width: 100%;
     padding: 14px;
@@ -525,11 +520,10 @@ footer {
 }
 
 .btn-auth-submit:hover {
-    background-color: #e0a800; /* Darker yellow on hover */
+    background-color: #e0a800;
     transform: translateY(-2px);
 }
 
-/* Auth Footer (Register Link) */
 .auth-footer {
     margin-top: 25px;
     padding-top: 20px;
@@ -548,7 +542,6 @@ footer {
     text-decoration: underline;
 }
 
-/* ================= USER TYPE SELECTOR (RADIO BUTTONS) ================= */
 .user-type-selector {
     margin-bottom: 25px;
     text-align: center;
@@ -570,7 +563,7 @@ footer {
 .radio-group {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between options */
+    gap: 20px;
 }
 
 .radio-option {
@@ -583,7 +576,7 @@ footer {
 }
 
 .radio-option input[type="radio"] {
-    appearance: none; /* Hide default browser radio button */
+    appearance: none;
     width: 18px;
     height: 18px;
     border: 2px solid var(--text-light);
@@ -594,7 +587,6 @@ footer {
     outline: none;
 }
 
-/* Custom Checkmark Style */
 .radio-option input[type="radio"]:checked {
     border-color: var(--primary-yellow);
     background-color: var(--primary-yellow);
@@ -612,119 +604,53 @@ footer {
     border-radius: 50%;
 }
 
-/* --- Register Page Specific Styles --- */
-
-/* Make the register card slightly wider to accommodate side-by-side inputs */
 .register-card-wide {
-    max-width: 600px !important; /* Overrides the default smaller login card width */
+    max-width: 600px !important;
     width: 100%;
 }
 
-/* Flex container for form rows */
 .form-row {
     display: flex;
-    gap: 15px; /* Space between the two inputs */
-    margin-bottom: 0; /* Let the internal form-groups handle bottom margin */
+    gap: 15px;
+    margin-bottom: 0;
 }
 
-/* Half width inputs */
 .half-width {
-    flex: 1; /* Takes up equal space */
+    flex: 1;
 }
 
-/* Ensure select box matches input styling */
 select {
     width: 100%;
-    padding: 12px 15px 12px 45px; /* Matches the padding of text inputs with icons */
+    padding: 12px 15px 12px 45px;
     border: 1px solid #ddd;
     border-radius: 6px;
     font-size: 14px;
     background-color: #fff;
     color: #333;
-    appearance: none; /* Removes default arrow for cleaner look */
+    appearance: none;
     cursor: pointer;
 }
 
-/* Fix for Select Box Arrow (Optional - helps UX) */
 .input-icon-wrapper {
     position: relative;
 }
 
-/* Mobile Responsiveness for Register Form */
-@media (max-width: 600px) {
-    .form-row {
-        flex-direction: column; /* Stack inputs on small screens */
-        gap: 0;
-    }
-    
-    .register-card-wide {
-        padding: 20px;
-    }
-}
-
-/* --- Register Page Specific Adjustments --- */
-
-/* 1. Stretch the main container width */
-.wide-container {
-    max-width: 850px !important; /* Increased from 450px to 850px */
-    width: 95%; /* Ensures it doesn't touch edges on mobile */
-}
-
-/* 2. Remove the specific card width restriction so it fills the new wide container */
-.register-card-wide {
-    max-width: 100% !important; 
-}
-
-/* 3. Improve Icon Spacing (Optional Polish) */
-/* This ensures the icon stays perfectly centered regardless of input height */
 .input-icon-wrapper i.input-icon {
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 16px; /* Slightly larger icon */
-    left: 18px; /* Move icon slightly more right */
-}
-
-.input-icon-wrapper input, 
-.input-icon-wrapper select {
-    padding-left: 50px !important; /* Give text more room so it doesn't hit the icon */
-}
-
-/*Wrapper must be relative so the icon can be absolute inside it */
-.input-icon-wrapper {
-    position: relative;
-    width: 100%;
-    display: block; /* Ensures it takes up space correctly */
-}
-
-/* The Icon itself */
-.input-icon-wrapper i.input-icon {
-    position: absolute;
-    top: 50%;
-    left: 15px; /* Distance from the left edge */
-    transform: translateY(-50%); /* Perfectly centers it vertically */
     font-size: 16px;
-    color: #888;
-    z-index: 10; /* Ensures it sits ON TOP of the input */
-    pointer-events: none; /* Clicks pass through the icon to the input */
+    left: 18px;
 }
 
-/* The Input Field inside the wrapper */
-.input-icon-wrapper input,
-.input-icon-wrapper select {
-    width: 100%;
-    padding: 12px 15px 12px 45px !important; /* Large left padding makes room for icon */
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    box-sizing: border-box; /* Ensures padding doesn't break the width */
-    height: 45px; /* Fixed height ensures consistent alignment */
-    margin: 0; /* Removes default margins that might push it away */
+.input-icon-wrapper input, .input-icon-wrapper select {
+    padding-left: 50px !important;
 }
 
-/* Fix for the Eye Icon (Show Password) specifically */
 .toggle-password {
     position: absolute;
-    right: 15px; /* Stays on the right */
-    left: auto; /* Overrides any default 'left' value */
+    right: 15px;
+    left: auto;
     top: 50%;
     transform: translateY(-50%);
     cursor: pointer;
@@ -732,30 +658,142 @@ select {
     z-index: 10;
 }
 
-/* --- My Profile (View Mode) Specifics --- */
-
-/* Ensures the grid looks good on mobile */
-@media (max-width: 768px) {
-    .view-profile-grid {
-        grid-template-columns: 1fr; /* Stack into 1 column on small screens */
-        gap: 20px;
-    }
+.wide-container {
+    max-width: 850px !important;
+    width: 95%;
 }
 
-/* Subtle hover effect for info groups */
-.info-group {
-    transition: background-color 0.2s;
-    padding: 8px;
+.register-card-wide {
+    max-width: 100% !important;
+}
+
+.input-icon-wrapper i.input-icon {
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    left: 15px;
+    color: #888;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.input-icon-wrapper input, .input-icon-wrapper select {
+    width: 100%;
+    padding: 12px 15px 12px 45px !important;
+    border: 1px solid #ddd;
     border-radius: 6px;
+    box-sizing: border-box;
+    height: 45px;
+    margin: 0;
 }
 
-.info-group:hover {
-    background-color: #fcfcfc;
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    left: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    z-index: 10;
 }
 
-/* ================= ABOUT PAGE STYLES ================= */
+/* ================= EVENT PAGES ================= */
+.events-page-container {
+    display: flex;
+    gap: 30px;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
-/* --- Official Registrations Section --- */
+.filter-sidebar {
+    width: 250px;
+    flex-shrink: 0;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    height: fit-content;
+}
+
+.filter-group {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-group:last-child {
+    border-bottom: none;
+}
+
+.filter-group h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.filter-option {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-light);
+    cursor: pointer;
+}
+
+.filter-option input {
+    margin-right: 10px;
+    accent-color: var(--primary-yellow);
+    width: 16px;
+    height: 16px;
+}
+
+.events-main-content {
+    flex: 1;
+}
+
+.events-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.sort-select {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    color: #555;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 10px;
+}
+
+.page-link {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: var(--text-dark);
+    transition: 0.3s;
+}
+
+.page-link.active, .page-link:hover {
+    background-color: var(--primary-yellow);
+    border-color: var(--primary-yellow);
+    color: #000;
+    font-weight: bold;
+}
+
 .registrations-section {
     background-color: #fff;
     padding: 20px 0;
@@ -778,7 +816,7 @@ select {
 }
 
 .registration-block img {
-    height: 150px; /* Adjust as needed */
+    height: 150px;
     width: auto;
 }
 
@@ -792,10 +830,9 @@ select {
     color: #333;
 }
 
-/* --- Hero Section --- */
 .about-hero {
-    background-color: #222; /* Fallback */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/background1.jpg'); /* Add a concert/event image here */
+    background-color: #222;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url('images/background1.jpg');
     background-size: cover;
     background-position: center;
     color: white;
@@ -817,7 +854,6 @@ select {
     color: #ddd;
 }
 
-/* --- Mission Section --- */
 .mission-section {
     padding: 80px 20px;
     text-align: center;
@@ -831,11 +867,10 @@ select {
 
 .mission-icon {
     font-size: 3rem;
-    color: #007bff; /* Use your brand color */
+    color: #007bff;
     margin-bottom: 20px;
 }
 
-/* --- Team Section --- */
 .team-section {
     background-color: #f4f6f9;
     padding: 80px 20px;
@@ -844,7 +879,7 @@ select {
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive grid */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 50px auto 0;
@@ -897,9 +932,7 @@ select {
     color: #007bff;
 }
 
-/* --- Find Us & Reach Us Section --- */
 .contact-reach-section {
-    /* Gradient background similar to the image */
     background: linear-gradient(to bottom, #008080, #004d4d);
     color: white;
     padding: 60px 0;
@@ -953,7 +986,6 @@ select {
     text-decoration: underline;
 }
 
-/* Map Container */
 .map-container {
     width: 100%;
     height: 400px;
@@ -968,205 +1000,356 @@ select {
     border: 0;
 }
 
-@media (max-width: 768px) {
-    .registrations-container {
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-    }
-    .contact-details-grid {
-        text-align: center;
-    }
-    .contact-detail-item h3 {
-        justify-content: center;
-    }
-}
-
-/* ================= BOOKING PAGE STYLES ================= */
-
-/* --- Utility Class for Toggling --- */
+/* ================= BOOKING ================= */
 .hidden {
     display: none !important;
 }
 
-/* --- USER DROPDOWN STYLES --- */
-.user-dropdown { position: relative; cursor: pointer; }
-.user-trigger { display: flex; align-items: center; gap: 10px; padding: 5px 10px; border-radius: 30px; transition: 0.3s; }
-.user-trigger:hover { background-color: #f5f5f5; }
-.user-avatar { width: 40px; height: 40px; background-color: var(--primary-yellow); color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; border: 2px solid #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-.user-name-label { font-weight: 600; font-size: 15px; color: var(--text-dark); }
-.dropdown-menu { position: absolute; top: 60px; right: 0; width: 250px; background: #fff; border-radius: 8px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); display: none; flex-direction: column; z-index: 1000; overflow: hidden; border: 1px solid #eee; }
-.dropdown-menu.show { display: flex; }
-.dropdown-header-info { padding: 15px 20px; border-bottom: 1px solid #eee; background-color: #f9f9f9; }
-.signed-text { display: block; font-size: 12px; color: #888; margin-bottom: 3px; }
-.role-text { font-weight: bold; color: var(--text-dark); font-size: 15px; }
-.dropdown-item { padding: 12px 20px; display: flex; align-items: center; gap: 12px; color: #555; font-size: 14px; transition: 0.2s; text-decoration: none; }
-.dropdown-item:hover { background-color: #fff8e1; color: #000; }
-.dropdown-item i { width: 20px; text-align: center; color: var(--primary-yellow); }
-.dropdown-divider { height: 1px; background-color: #eee; margin: 5px 0; }
-.logout-item { color: #d9534f; }
-.logout-item:hover { background-color: #fff5f5; color: #c9302c; }
-.logout-item i { color: #d9534f; }
-
-/* --- Booking Page Specific Styles --- */
-.booking-container { display: flex; gap: 30px; padding: 40px 20px; max-width: 1100px; margin: 0 auto; align-items: flex-start; }
-.booking-main { flex: 1; }
-.booking-section { background: #fff; border-radius: 10px; padding: 25px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.booking-section h2 { font-size: 20px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-
-/* Ticket Selector */
-.ticket-row { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
-.ticket-info h4 { margin-bottom: 5px; font-size: 18px; }
-.ticket-price { font-weight: bold; color: var(--text-dark); font-size: 16px; }
-.ticket-quantity { display: flex; align-items: center; gap: 10px; }
-.qty-btn { width: 35px; height: 35px; border-radius: 50%; border: 1px solid #ddd; background: #fff; cursor: pointer; font-weight: bold; color: var(--text-dark); font-size: 16px; }
-.qty-btn:hover { background: var(--primary-yellow); border-color: var(--primary-yellow); }
-.qty-input { width: 50px; text-align: center; border: none; font-weight: bold; font-size: 16px; }
-
-/* Payment Methods */
-.payment-options { display: grid; gap: 15px; margin-bottom: 25px; }
-.payment-card { border: 1px solid #ddd; padding: 15px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 15px; transition: 0.2s; }
-.payment-card:hover, .payment-card.active { border-color: var(--primary-yellow); background: rgba(255, 193, 7, 0.05); }
-.payment-card i { font-size: 20px; color: #555; }
-
-/* Input Styles inside Payment */
-.payment-input-group { margin-bottom: 15px; }
-.payment-input-group label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 8px; color: #444; }
-.payment-input-group input, .payment-input-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-size: 14px; }
-.info-text { font-size: 14px; color: #666; line-height: 1.5; background: #f9f9f9; padding: 15px; border-radius: 6px; border: 1px solid #eee; text-align: center; }
-
-/* RIGHT SIDE: Summary */
-.booking-sidebar { width: 350px; background: #fff; border-radius: 10px; padding: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); position: sticky; top: 100px; }
-.event-summary-header { display: flex; gap: 15px; margin-bottom: 20px; }
-.summary-img { width: 80px; height: 80px; object-fit: cover; border-radius: 8px; }
-.summary-details h4 { font-size: 16px; margin-bottom: 5px; line-height: 1.4; }
-.summary-details p { font-size: 13px; color: #777; margin-bottom: 3px; }
-.price-breakdown { border-top: 1px solid #eee; padding-top: 15px; margin-top: 15px; }
-.price-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-size: 14px; color: #555; }
-.price-row.total { font-size: 18px; font-weight: bold; color: #000; margin-top: 15px; border-top: 2px dashed #eee; padding-top: 15px; }
-
-.btn-checkout { width: 100%; background: var(--primary-yellow); color: #000; border: none; padding: 15px; border-radius: 8px; font-weight: bold; font-size: 16px; cursor: pointer; margin-top: 20px; text-transform: uppercase; }
-.btn-checkout:hover { background: #e0a800; }
-
-@media (max-width: 850px) {
-    .booking-container { flex-direction: column; }
-    .booking-sidebar { width: 100%; position: static; }
-}
-
-/* ================= EVENTS PAGE STYLES ================= */
-
-/* --- Page Specific Layout --- */
-.events-page-container {
-    display: flex;
-    gap: 30px;
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* --- Sidebar Filters --- */
-.filter-sidebar {
-    width: 250px;
-    flex-shrink: 0;
-    background: #fff;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    height: fit-content;
-}
-
-.filter-group {
-    margin-bottom: 25px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-}
-
-.filter-group:last-child {
-    border-bottom: none;
-}
-
-.filter-group h4 {
-    font-size: 16px;
-    margin-bottom: 15px;
-    color: var(--text-dark);
-}
-
-.filter-option {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: var(--text-light);
+.user-dropdown {
+    position: relative;
     cursor: pointer;
 }
 
-.filter-option input {
-    margin-right: 10px;
-    accent-color: var(--primary-yellow);
-    width: 16px;
-    height: 16px;
-}
-
-/* --- Main Content Area --- */
-.events-main-content {
-    flex: 1;
-}
-
-.events-header-bar {
+.user-trigger {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-}
-
-.sort-select {
-    padding: 8px 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    outline: none;
-    color: #555;
-}
-
-/* --- Pagination --- */
-.pagination {
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
     gap: 10px;
-}
-
-.page-link {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    color: var(--text-dark);
+    padding: 5px 10px;
+    border-radius: 30px;
     transition: 0.3s;
 }
 
-.page-link.active, .page-link:hover {
+.user-trigger:hover {
+    background-color: #f5f5f5;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
     background-color: var(--primary-yellow);
-    border-color: var(--primary-yellow);
     color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .events-page-container {
-        flex-direction: column;
-    }
-    .filter-sidebar {
-        width: 100%;
-    }
+.user-name-label {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-dark);
 }
 
-/* ================= PROFILE EDIT PAGE STYLES ================= */
+.dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 250px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
 
-/* Single Box Redesign */
+.dropdown-menu.show {
+    display: flex;
+}
+
+.dropdown-header-info {
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    background-color: #f9f9f9;
+}
+
+.signed-text {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 3px;
+}
+
+.role-text {
+    font-weight: bold;
+    color: var(--text-dark);
+    font-size: 15px;
+}
+
+.dropdown-item {
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #555;
+    font-size: 14px;
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.dropdown-item:hover {
+    background-color: #fff8e1;
+    color: #000;
+}
+
+.dropdown-item i {
+    width: 20px;
+    text-align: center;
+    color: var(--primary-yellow);
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #eee;
+    margin: 5px 0;
+}
+
+.logout-item {
+    color: #d9534f;
+}
+
+.logout-item:hover {
+    background-color: #fff5f5;
+    color: #c9302c;
+}
+
+.logout-item i {
+    color: #d9534f;
+}
+
+.booking-container {
+    display: flex;
+    gap: 30px;
+    padding: 40px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.booking-main {
+    flex: 1;
+}
+
+.booking-section {
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.booking-section h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.ticket-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.ticket-info h4 {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.ticket-price {
+    font-weight: bold;
+    color: var(--text-dark);
+    font-size: 16px;
+}
+
+.ticket-quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.qty-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--text-dark);
+    font-size: 16px;
+}
+
+.qty-btn:hover {
+    background: var(--primary-yellow);
+    border-color: var(--primary-yellow);
+}
+
+.qty-input {
+    width: 50px;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.payment-options {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.payment-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: 0.2s;
+}
+
+.payment-card:hover, .payment-card.active {
+    border-color: var(--primary-yellow);
+    background: rgba(255, 193, 7, 0.05);
+}
+
+.payment-card i {
+    font-size: 20px;
+    color: #555;
+}
+
+.payment-input-group {
+    margin-bottom: 15px;
+}
+
+.payment-input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.payment-input-group input, .payment-input-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.info-text {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #eee;
+    text-align: center;
+}
+
+.booking-sidebar {
+    width: 350px;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 100px;
+}
+
+.event-summary-header {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.summary-details h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    line-height: 1.4;
+}
+
+.summary-details p {
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 3px;
+}
+
+.price-breakdown {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+}
+
+.price-row.total {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000;
+    margin-top: 15px;
+    border-top: 2px dashed #eee;
+    padding-top: 15px;
+}
+
+.btn-checkout {
+    width: 100%;
+    background: var(--primary-yellow);
+    color: #000;
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+.btn-checkout:hover {
+    background: #e0a800;
+}
+
+/* ================= PROFILE PAGES ================= */
+.view-profile-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.info-group {
+    transition: background-color 0.2s;
+    padding: 8px;
+    border-radius: 6px;
+}
+
+.info-group:hover {
+    background-color: #fcfcfc;
+}
+
 .single-box-container {
     max-width: 1000px;
     margin: 40px auto;
@@ -1178,10 +1361,9 @@ select {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-    display: flex; /* Creates the side-by-side inside one box */
+    display: flex;
 }
 
-/* Left Side: Profile & Avatar Only */
 .card-sidebar {
     width: 250px;
     background: #fafafa;
@@ -1232,7 +1414,6 @@ select {
     font-size: 16px;
 }
 
-/* Right Side: Form & Cover */
 .card-content {
     flex: 1;
 }
@@ -1263,7 +1444,6 @@ select {
     backdrop-filter: blur(4px);
 }
 
-/* Form Details */
 .form-body {
     padding: 40px;
 }
@@ -1275,11 +1455,28 @@ select {
     margin-bottom: 30px;
 }
 
-.card-header-flex h1 { font-size: 26px; font-weight: 700; }
+.card-header-flex h1 {
+    font-size: 26px;
+    font-weight: 700;
+}
 
-.action-links { display: flex; gap: 15px; font-size: 14px; }
-.update-link { color: var(--primary-yellow); font-weight: bold; text-decoration: none; }
-.cancel-link { color: #888; font-weight: bold; text-decoration: none; }
+.action-links {
+    display: flex;
+    gap: 15px;
+    font-size: 14px;
+}
+
+.update-link {
+    color: var(--primary-yellow);
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cancel-link {
+    color: #888;
+    font-weight: bold;
+    text-decoration: none;
+}
 
 .form-grid {
     display: grid;
@@ -1294,8 +1491,6 @@ select {
     margin-bottom: 8px;
     color: #444;
 }
-
-.form-group label span { color: #e74c3c; }
 
 .form-group input, .form-group select {
     width: 100%;
@@ -1326,17 +1521,11 @@ select {
     text-transform: uppercase;
 }
 
-.btn-bottom-update:hover { background-color: #e5ac00; transform: translateY(-1px); }
-
-@media (max-width: 850px) {
-    .main-card { flex-direction: column; }
-    .card-sidebar { width: 100%; border-right: none; border-bottom: 1px solid #eee; }
-    .form-grid { grid-template-columns: 1fr; }
+.btn-bottom-update:hover {
+    background-color: #e5ac00;
+    transform: translateY(-1px);
 }
 
-/* ================= PROFILE PAGE STYLES ================= */
-
-/* Specific Profile Layout Styles */
 .profile-header-container {
     background-color: var(--white);
     max-width: 1000px;
@@ -1348,7 +1537,7 @@ select {
 .cover-photo {
     width: 100%;
     height: 300px;
-    background: url('images/w14.jpg') center/cover; /* Reusing hero asset */
+    background: url('images/w14.jpg') center/cover;
     position: relative;
 }
 
@@ -1360,7 +1549,7 @@ select {
 
 .profile-avatar-wrapper {
     position: absolute;
-    top: -75px; /* Pulls half the avatar up into the cover photo */
+    top: -75px;
     left: 20px;
     z-index: 5;
 }
@@ -1398,7 +1587,7 @@ select {
 }
 
 .profile-info {
-    margin-top: 55px; /* Pushes content below the absolute avatar */
+    margin-top: 55px;
 }
 
 .profile-info h2 {
@@ -1430,4 +1619,151 @@ select {
 
 .profile-stats i {
     margin-right: 5px;
+}
+
+/* ================= MEDIA QUERIES ================= */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .search-bar {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .auth-buttons {
+        justify-content: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .search-widget {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input-group {
+        min-width: auto;
+    }
+
+    .event-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .auth-card {
+        padding: 20px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .register-card-wide {
+        padding: 20px;
+    }
+
+    .events-page-container {
+        flex-direction: column;
+    }
+
+    .filter-sidebar {
+        width: 100%;
+    }
+
+    .registrations-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .contact-details-grid {
+        text-align: center;
+    }
+
+    .contact-detail-item h3 {
+        justify-content: center;
+    }
+
+    .booking-container {
+        flex-direction: column;
+    }
+
+    .booking-sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .main-card {
+        flex-direction: column;
+    }
+
+    .card-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .register-card-wide {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 850px) {
+    .booking-container {
+        flex-direction: column;
+    }
+
+    .booking-sidebar {
+        width: 100%;
+        position: static;
+    }
+
+    .main-card {
+        flex-direction: column;
+    }
+
+    .card-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }
