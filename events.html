@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIZA Event Ticket | Browse Events</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="images/DIZAET_Logo.png" alt="DIZA Event Ticket">
+            </a>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search for events, concerts, activities...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="events.html" class="active">Events</a>
+                <a href="about.html">About Us</a>
+                <a href="help.html">Help</a>
+            </nav>
+
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-login">Log in</a>
+                <a href="register.html" class="btn-register">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" style="height: 250px;">
+        <div class="hero-overlay">
+            <h1>All Events</h1>
+            <p>Explore concerts, workshops, and sports happening near you.</p>
+        </div>
+    </section>
+
+    <div class="events-page-container">
+        
+        <aside class="filter-sidebar">
+            <div class="filter-group">
+                <h4>Categories</h4>
+                <label class="filter-option"><input type="checkbox"> Concerts</label>
+                <label class="filter-option"><input type="checkbox"> Sports</label>
+                <label class="filter-option"><input type="checkbox"> Workshops</label>
+                <label class="filter-option"><input type="checkbox"> Conferences</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Location</h4>
+                <label class="filter-option"><input type="checkbox"> Kuala Lumpur</label>
+                <label class="filter-option"><input type="checkbox"> Kelantan</label>
+                <label class="filter-option"><input type="checkbox"> Penang</label>
+                <label class="filter-option"><input type="checkbox"> Online</label>
+            </div>
+
+            <div class="filter-group">
+                <h4>Price Range</h4>
+                <label class="filter-option"><input type="radio" name="price"> Any Price</label>
+                <label class="filter-option"><input type="radio" name="price"> Under RM 50</label>
+                <label class="filter-option"><input type="radio" name="price"> RM 50 - RM 150</label>
+                <label class="filter-option"><input type="radio" name="price"> RM 150+</label>
+            </div>
+            
+            <button class="btn-primary" style="width: 100%; font-size: 14px;">Apply Filters</button>
+        </aside>
+
+        <main class="events-main-content">
+            <div class="events-header-bar">
+                <h3>Showing 6 Events</h3>
+                <select class="sort-select">
+                    <option>Sort by: Newest</option>
+                    <option>Sort by: Price (Low to High)</option>
+                    <option>Sort by: Price (High to Low)</option>
+                </select>
+            </div>
+
+            <div class="event-grid">
+                <div class="event-card">
+                    <div class="card-image">
+                        <img src="images/event1.png" alt="Event">
+                        <span class="badge">Popular</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>LIF25 Beach Fishing Master</h3>
+                        <div class="event-meta">
+                            <p><i class="far fa-calendar-alt"></i> 25 Dec 2025</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Lagenda Park</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="price">From <strong>RM 150.00</strong></span>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="card-image">
+                        <img src="images/event2.png" alt="Event">
+                    </div>
+                    <div class="card-content">
+                        <h3>Borneo Half Marathon 2026</h3>
+                        <div class="event-meta">
+                            <p><i class="far fa-calendar-alt"></i> 10 Feb 2026</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Kota Kinabalu</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="price">From <strong>RM 120.00</strong></span>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="card-image">
+                        <img src="images/event3.png" alt="Event">
+                    </div>
+                    <div class="card-content">
+                        <h3>Crayon Shinchan Adventure</h3>
+                        <div class="event-meta">
+                            <p><i class="far fa-calendar-alt"></i> 14 Jan 2026</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Pavilion KL</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="price">From <strong>RM 30.00</strong></span>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="card-image">
+                        <img src="images/event4.png" alt="Event">
+                    </div>
+                    <div class="card-content">
+                        <h3>DIZA Tech Summit 2026</h3>
+                        <div class="event-meta">
+                            <p><i class="far fa-calendar-alt"></i> 05 Mar 2026</p>
+                            <p><i class="fas fa-map-marker-alt"></i> UiTM Machang</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="price">From <strong>RM 50.00</strong></span>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="card-image">
+                        <img src="images/event1.png" alt="Event"> 
+                    </div>
+                    <div class="card-content">
+                        <h3>K-Pop World Tour KL</h3>
+                        <div class="event-meta">
+                            <p><i class="far fa-calendar-alt"></i> 20 Apr 2026</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Axiata Arena</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="price">From <strong>RM 288.00</strong></span>
+                            <button class="btn-buy">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="card-image">
+                         <img src="images/event2.png" alt="Event">
+                    </div>
+                    <div class="card-content">
+                        <h3>UiTM E-Sports Championship</h3>
+                        <div class="event-meta">
+                            <p><i class="far fa-calendar-alt"></i> 15 May 2026</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Online</p>
+                        </div>
+                        <div class="card-footer">
+                            <span class="price"><strong>Free</strong></span>
+                            <button class="btn-buy">Register</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pagination">
+                <a href="#" class="page-link"><i class="fas fa-chevron-left"></i></a>
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <a href="#" class="page-link"><i class="fas fa-chevron-right"></i></a>
+            </div>
+
+        </main>
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            
+            <div class="footer-col brand-col">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZA Event Ticket" class="footer-logo">
+                <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px;"> In Collaboration With </p>
+                
+                <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="images/LOGO UiTM OUTLINE 3 (WHITE).png" 
+                            alt="UiTM" 
+                            style="height: 40px; opacity: 0.8;">
+                        
+                        <span style="color:#555;">|</span>
+                        
+                        <img src="images/Google-Gemini-White-Logo.png" 
+                            alt="Gemini" 
+                            style="height: 40px; opacity: 0.8;">
+                </div>
+
+                <p>Your one-stop platform for all event ticketing needs.</p>
+            </div>
+
+            <div class="footer-col contact-col">
+                <h4>Contact Us</h4>
+                <div class="contact-details">
+                    <p>
+                        <b>Hotline:</b> <br>
+                        +60 16-262 4834 / +60 11-6551 3006
+                    </p>
+                    <p>
+                        <b>Email:</b> <br>
+                        support@grab.uitm.edu.my
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul class="footer-links-list">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/modannie"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/modannyyy"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/tadanny._"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/95K89KDhTm"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 DIZAZ Group. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

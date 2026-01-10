@@ -7,43 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <style>
-        .input-icon-wrapper {
-            position: relative;
-            width: 100%;
-        }
-
-        /* Icon styling */
-        .input-icon-wrapper i.input-icon {
-            position: absolute;
-            left: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #888;
-            z-index: 10;
-        }
-
-        /* Input field padding adjustment */
-        .input-icon-wrapper input {
-            width: 100%;
-            padding: 10px 10px 10px 45px !important; /* Left padding for icon space */
-            box-sizing: border-box;
-        }
-
-        /* Keep the eye icon on the right for password */
-        .toggle-password {
-            position: absolute;
-            right: 15px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-            color: #888;
-            z-index: 10;
-        }
-    </style>
 </head>
 <body>
-
     <header class="navbar">
         <div class="container nav-container">
             <a href="index.html" class="logo">
@@ -52,12 +17,13 @@
 
             <nav class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="#">Events</a>
-                <a href="#">About Us</a>
-                <a href="#">Help</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About Us</a>
+                <a href="help.html">Help</a>
             </nav>
 
             <div class="auth-buttons">
+                <a href="login.html" class="btn-login">Log In</a>
                 <a href="register.html" class="btn-register">Register</a>
             </div>
         </div>
@@ -103,7 +69,7 @@
                     </div>
 
                     <div class="form-actions">
-                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        <a href="#support" class="forgot-password">Forgot Password?</a>
                     </div>
 
                     <button type="submit" class="btn-auth-submit">LOGIN</button>
@@ -155,9 +121,9 @@
             <div class="footer-col">
                 <h4>Support</h4>
                 <ul class="footer-links-list">
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">FAQ</a></li>
                 </ul>
             </div>
 

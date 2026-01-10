@@ -25,7 +25,7 @@
         /* --- HERO SECTION --- */
         .support-hero {
             /* FIXED: Added url() wrapper to image */
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/background1.jpg');
             background-size: cover;
             background-position: center;
             height: 400px; /* Increased height for better spacing */
@@ -310,6 +310,11 @@
                 <img src="images/DIZAET_Logo.png" alt="DIZA Event Ticket">
             </a>
 
+            <div class="search-bar">
+                <input type="text" placeholder="Search for events, concerts, activities...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="events.html">Events</a>
@@ -318,12 +323,11 @@
             </nav>
 
             <div class="auth-buttons">
-                <a href="login.html" class="btn-login">Log In</a>
+                <a href="login.html" class="btn-login">Log in</a>
                 <a href="register.html" class="btn-register">Register</a>
             </div>
         </div>
     </header>
-
     <section class="support-hero">
         <h1>How can we help you?</h1>
         <p>Search our knowledge base or select a category below.</p>
@@ -499,6 +503,7 @@
             <p>&copy; 2026 DIZAZ Group. All Rights Reserved.</p>
         </div>
     </footer>
+
 
     <script>
         const faqQuestions = document.querySelectorAll('.faq-question');

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIZA Event Ticket | Checkout</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index2.html" class="logo">
+                <img src="images/DIZAET_Logo.png" alt="DIZA Event Ticket">
+            </a>
+            <div class="search-bar">
+                <input type="text" placeholder="Search for events...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About Us</a>
+                <a href="help.html">Help</a>
+            </nav>
+            <div class="user-dropdown">
+                <div class="user-trigger" onclick="toggleDropdown()">
+                    <div class="user-avatar">AZ</div> <span class="user-name-label">Amier Zhafran</span>
+                    <i class="fas fa-caret-down" style="color:#888;"></i>
+                </div>
+                <div class="dropdown-menu" id="userMenu">
+                    <div class="dropdown-header-info">
+                        <span class="signed-text">Signed in as</span>
+                        <span class="role-text">User</span>
+                    </div>
+                    <a href="profile.html" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a>
+                    <a href="tickets.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> My Ticket History</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="organizer-profile.html" class="dropdown-item"><i class="fas fa-building"></i> Organizer Profile</a>
+                    <a href="admin-dashboard.html" class="dropdown-item"><i class="fas fa-chart-line"></i> Organizer Dashboard</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="login.html" class="dropdown-item logout-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="booking-container">
+        
+        <main class="booking-main">
+            <form id="paymentForm" onsubmit="processPayment(event)">
+                
+                <div class="booking-section">
+                    <h2>1. Select Tickets</h2>
+                    <div class="ticket-row">
+                        <div class="ticket-info">
+                            <h4>Entry Ticket</h4>
+                            <p class="ticket-price">RM 150.00 / pax</p>
+                        </div>
+                        <div class="ticket-quantity">
+                            <button type="button" class="qty-btn" onclick="updateQty(-1)">-</button>
+                            <input type="text" id="qty-general" class="qty-input" value="1" readonly>
+                            <button type="button" class="qty-btn" onclick="updateQty(1)">+</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-section">
+                    <h2>2. Attendee Details</h2>
+                    <div class="payment-input-group">
+                        <label>Full Name</label>
+                        <input type="text" value="Amier Zhafran" style="background:#f9f9f9;" readonly>
+                    </div>
+                    <div class="payment-input-group">
+                        <label>Email Address</label>
+                        <input type="email" value="zhafran.amier02@gmail.com" style="background:#f9f9f9;" readonly>
+                    </div>
+                    <div class="payment-input-group">
+                        <label>Phone Number (Optional)</label>
+                        <input type="text" placeholder="+60 12-345 6789">
+                    </div>
+                </div>
+
+                <div class="booking-section">
+                    <h2>3. Payment Method</h2>
+                    
+                    <div class="payment-options">
+                        <label class="payment-card active" onclick="selectMethod('card')">
+                            <input type="radio" name="payment" checked>
+                            <i class="fas fa-credit-card"></i>
+                            <span>Credit / Debit Card</span>
+                        </label>
+
+                        <label class="payment-card" onclick="selectMethod('fpx')">
+                            <input type="radio" name="payment">
+                            <i class="fas fa-university"></i>
+                            <span>FPX Online Banking</span>
+                        </label>
+
+                        <label class="payment-card" onclick="selectMethod('ewallet')">
+                            <input type="radio" name="payment">
+                            <i class="fas fa-wallet"></i>
+                            <span>GrabPay / TnG E-Wallet</span>
+                        </label>
+                    </div>
+
+                    <div id="card-fields">
+                        <div class="payment-input-group">
+                            <label>Card Number <span style="color:red">*</span></label>
+                            <input type="text" placeholder="0000 0000 0000 0000" required>
+                        </div>
+                        <div style="display: flex; gap: 15px;">
+                            <div class="payment-input-group" style="flex:1;">
+                                <label>Expiry <span style="color:red">*</span></label>
+                                <input type="text" placeholder="MM/YY" required>
+                            </div>
+                            <div class="payment-input-group" style="flex:1;">
+                                <label>CVV <span style="color:red">*</span></label>
+                                <input type="text" placeholder="123" required>
+                            </div>
+                        </div>
+                        <div class="payment-input-group">
+                            <label>Cardholder Name <span style="color:red">*</span></label>
+                            <input type="text" placeholder="Name on Card" required>
+                        </div>
+                    </div>
+
+                    <div id="fpx-fields" class="hidden">
+                        <div class="payment-input-group">
+                            <label>Select Bank <span style="color:red">*</span></label>
+                            <select disabled required> <option value="" disabled selected>Select your bank</option>
+                                <option>Maybank2u</option>
+                                <option>CIMB Clicks</option>
+                                <option>Bank Islam</option>
+                                <option>RHB Online</option>
+                                <option>Public Bank</option>
+                            </select>
+                        </div>
+                        <p class="info-text">You will be redirected to your bank's website to complete the secure transaction.</p>
+                    </div>
+
+                    <div id="ewallet-fields" class="hidden">
+                        <div class="payment-input-group">
+                            <label>Select Wallet <span style="color:red">*</span></label>
+                            <select disabled required>
+                                <option value="" disabled selected>Select E-Wallet</option>
+                                <option>GrabPay</option>
+                                <option>Touch 'n Go eWallet</option>
+                                <option>Boost</option>
+                            </select>
+                        </div>
+                        <p class="info-text">
+                            <i class="fas fa-qrcode" style="font-size: 24px; margin-bottom: 10px; display:block;"></i>
+                            A QR Code will be generated for you to scan and pay.
+                        </p>
+                    </div>
+                </div>
+            </form>
+        </main>
+
+        <aside class="booking-sidebar">
+            <h2>Order Summary</h2>
+            
+            <div class="event-summary-header">
+                <img src="images/event1.png" alt="Event" class="summary-img">
+                <div class="summary-details">
+                    <h4>LIF25 Beach Fishing Master</h4>
+                    <p><i class="far fa-calendar-alt"></i> 25 Dec 2025</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Lagenda Park</p>
+                </div>
+            </div>
+
+            <div class="price-breakdown">
+                <div class="price-row">
+                    <span>Tickets (x<span id="summary-qty">1</span>)</span>
+                    <span>RM <span id="summary-price">150.00</span></span>
+                </div>
+                <div class="price-row">
+                    <span>Processing Fee</span>
+                    <span>RM 5.00</span>
+                </div>
+                
+                <div class="price-row total">
+                    <span>Total Amount</span>
+                    <span style="color: var(--primary-yellow); font-size: 22px;">RM <span id="total-amount">155.00</span></span>
+                </div>
+            </div>
+
+            <button class="btn-checkout" onclick="document.getElementById('paymentForm').requestSubmit()">Pay Now</button>
+            <p style="text-align: center; font-size: 12px; color: #888; margin-top: 15px;">
+                <i class="fas fa-lock"></i> Secure Payment Encrypted
+            </p>
+        </aside>
+
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZA Event Ticket" class="footer-logo">
+                <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #666; margin-bottom: 8px;"> In Collaboration With </p>
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <img src="images/LOGO UiTM OUTLINE 3 (WHITE).png" alt="UiTM" style="height: 40px; opacity: 0.8;">
+                    <span style="color:#555;">|</span>
+                    <img src="images/Google-Gemini-White-Logo.png" alt="Gemini" style="height: 40px; opacity: 0.8;">
+                </div>
+                <p>Your one-stop platform for all event ticketing needs.</p>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>Contact Us</h4>
+                <div class="contact-details">
+                    <p><b>Hotline:</b> <br> +60 16-262 4834 / +60 11-6551 3006</p>
+                    <p><b>Email:</b> <br> support@grab.uitm.edu.my</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Support</h4>
+                <ul class="footer-links-list">
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="help.html">FAQ</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/modannie"><i class="fab fa-facebook"></i></a>
+                    <a href="https://x.com/modannyyy"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/tadanny._"><i class="fab fa-instagram"></i></a>
+                    <a href="https://discord.gg/95K89KDhTm"><i class="fab fa-discord"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DIZAZ Group. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const pricePerTicket = 150;
+        const processingFee = 5;
+
+        /* --- 1. Ticket Quantity Logic --- */
+        function updateQty(change) {
+            const input = document.getElementById('qty-general');
+            let currentQty = parseInt(input.value);
+            let newQty = currentQty + change;
+
+            if (newQty < 1) newQty = 1; // Minimum 1 ticket
+
+            input.value = newQty;
+            updateTotal();
+        }
+
+        function updateTotal() {
+            const qty = parseInt(document.getElementById('qty-general').value);
+            const subtotal = qty * pricePerTicket;
+            const grandTotal = subtotal + processingFee;
+
+            // Update Summary
+            document.getElementById('summary-qty').innerText = qty;
+            document.getElementById('summary-price').innerText = subtotal.toFixed(2);
+            document.getElementById('total-amount').innerText = grandTotal.toFixed(2);
+        }
+
+        /* --- 2. Payment Method Switching Logic --- */
+        function selectMethod(method) {
+            // 1. Reset all cards to inactive
+            document.querySelectorAll('.payment-card').forEach(card => card.classList.remove('active'));
+            
+            // 2. Add active class to the clicked card (find parent label)
+            const clickedCard = document.querySelector(`label[onclick="selectMethod('${method}')"]`);
+            if (clickedCard) clickedCard.classList.add('active');
+
+            // 3. Hide all sections first
+            document.getElementById('card-fields').classList.add('hidden');
+            document.getElementById('fpx-fields').classList.add('hidden');
+            document.getElementById('ewallet-fields').classList.add('hidden');
+
+            // 4. Disable ALL inputs first (to prevent validation errors on hidden fields)
+            toggleInputs('card-fields', false);
+            toggleInputs('fpx-fields', false);
+            toggleInputs('ewallet-fields', false);
+
+            // 5. Show the selected section
+            const selectedSectionId = method + '-fields';
+            document.getElementById(selectedSectionId).classList.remove('hidden');
+
+            // 6. Enable inputs for the selected section ONLY
+            toggleInputs(selectedSectionId, true);
+        }
+
+        // Helper to enable/disable inputs inside a container
+        function toggleInputs(containerId, isEnabled) {
+            const container = document.getElementById(containerId);
+            const inputs = container.querySelectorAll('input, select');
+            inputs.forEach(input => {
+                input.disabled = !isEnabled;
+            });
+        }
+
+        /* --- 3. Payment Processing --- */
+        function processPayment(e) {
+            e.preventDefault(); // Stop page reload
+
+            const btn = document.querySelector('.btn-checkout');
+            const originalText = btn.innerText;
+            
+            btn.innerText = "PROCESSING...";
+            btn.style.opacity = "0.7";
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert("Payment Successful! See you at the event.");
+                // window.location.href = "tickets.html"; // Redirect to tickets page
+                btn.innerText = originalText;
+                btn.style.opacity = "1";
+                btn.disabled = false;
+            }, 2000);
+        }
+
+        // Dropdown Toggle
+        function toggleDropdown() {
+            document.getElementById("userMenu").classList.toggle("show");
+        }
+
+        // Close dropdown when clicking outside
+        window.onclick = function(event) {
+            if (!event.target.closest('.user-dropdown')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
