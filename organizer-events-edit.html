@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Event - Organizer Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styledashboard.css">
+    
+</head>
+<body class="org-theme">
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
+                <h2>EventApp <span class="badge">ORG</span></h2>
+            </div>
+            
+            <ul class="nav-links">
+                <li>
+                    <a href="organizer-dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
+                </li>
+                
+                <li class="menu-header">My Events</li>
+                
+                <li>
+                    <a href="organizer-create-event.html"><i class="fas fa-plus-circle"></i> Create New Event</a>
+                </li>
+                
+                <li>
+                    <a href="organizer-events.html"><i class="fas fa-calendar-alt"></i> My Events List</a>
+                </li>
+                
+                <li class="menu-header">Account</li>
+                <li>
+                    <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> Org Profile</a>
+                </li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            
+            <header class="top-bar">
+                <div class="page-title">
+                    <h1>Edit Event</h1>
+                </div>
+
+                <div class="user-menu">
+                    <button class="user-btn" onclick="toggleDropdown()">
+                        <img src="https://ui-avatars.com/api" alt="Org" class="avatar">
+                        <span class="username">Tech Giants Co.</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    
+                    <div class="dropdown-content" id="orgDropdown">
+                        <div class="dropdown-header">
+                            <p>Organizer Account</p>
+                        </div>
+                        <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> My Profile</a>
+                        <div class="divider"></div>
+                        <a href="logout.html" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content-padding">
+                <div class="card card-padded">
+                    <form action="#" method="POST" class="org-form">
+                        
+                        <div class="form-section-title">Basic Information</div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Event Title <span>*</span></label>
+                            <input type="text" class="form-input" value="Tech Innovation Summit" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Category <span>*</span></label>
+                                <select class="form-select" required>
+                                    <option value="tech" selected>Technology</option>
+                                    <option value="music">Music & Concerts</option>
+                                    <option value="education">Education & Workshops</option>
+                                    <option value="business">Business & Networking</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Event Status</label>
+                                <select class="form-select">
+                                    <option value="draft">Draft (Hidden)</option>
+                                    <option value="published" selected>Published (Public)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Description <span>*</span></label>
+                            <textarea class="form-textarea" required>Annual summit for tech leaders to discuss AI and Future Tech. Join us for insightful talks, networking opportunities, and hands-on workshops.</textarea>
+                        </div>
+                        
+                        <div class="form-section-title">Date & Venue</div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Venue Name <span>*</span></label>
+                                <input type="text" class="form-input" value="KL Convention Centre" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Venue Capacity <span>*</span></label>
+                                <input type="number" class="form-input" value="3000" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label">Full Address <span>*</span></label>
+                            <input type="text" class="form-input" value="Jalan Pinang, Kuala Lumpur, 50450" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Start Date & Time <span>*</span></label>
+                                <input type="datetime-local" class="form-input" value="2025-06-15T09:00" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">End Date & Time <span>*</span></label>
+                                <input type="datetime-local" class="form-input" value="2025-06-15T18:00" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Ticket & Pricing</div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Price per Ticket (RM) <span>*</span></label>
+                                <input type="number" class="form-input" value="150.00" step="0.01" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Ticket Quantity</label>
+                                <input type="number" class="form-input" value="3000" placeholder="Available for sale">
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Event Media</div>
+
+                        <div class="form-group">
+                            <label class="form-label">Event Banner Image</label>
+                            <div class="file-upload-box" id="uploadBox">
+                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                                <p>Click to upload or drag and drop</p>
+                                <span style="font-size: 12px;">(Max size: 5MB, JPG/PNG)</span>
+                                <input type="file" id="bannerInput" style="display: none;" accept="image/*" onchange="previewBanner(event)">
+                            </div>
+                            <div id="bannerPreview" style="margin-top: 15px; display: none;">
+                                <img id="previewImg" src="" alt="Banner Preview" style="max-width: 100%; max-height: 300px; border-radius: 6px; border: 1px solid #dcdfe6;">
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel" onclick="window.location.href='organizer-events.html'">Cancel</button>
+                            <button type="submit" class="btn-save">
+                                <i class="fas fa-save"></i> Update Event
+                            </button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            document.getElementById("orgDropdown").classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.closest('.user-btn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-content");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.classList.contains('show')) {
+                        openDropdown.classList.remove('show');
+                    }
+                }
+            }
+        }
+        
+        // File upload box click handler
+        document.getElementById('uploadBox').addEventListener('click', function() {
+            document.getElementById('bannerInput').click();
+        });
+        
+        // Preview banner image
+        function previewBanner(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('bannerPreview');
+                    const previewImg = document.getElementById('previewImg');
+                    previewImg.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>
