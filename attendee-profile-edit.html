@@ -3,91 +3,200 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile - Admin</title>
+    <title>Edit Profile | DIZA Event Ticket</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styledashboard.css">
 </head>
-<body class="admin-theme">
-    <div class="dashboard-container">
-        
-        <aside class="sidebar">
-            <div class="brand">
-                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
-                <h2>EventApp <span class="badge">ADMIN</span></h2>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="index2.html" class="logo">
+                <img src="images/DIZAET_Logo.png" alt="DIZA Event Ticket">
+            </a>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search for events, concerts, activities...">
+                <button><i class="fas fa-search"></i></button>
             </div>
-            <ul class="nav-links">
-                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
-                <li class="menu-header">User Management</li>
-                <li><a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a></li>
-                <li><a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a></li>
-                <li><a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
-                <li class="menu-header">System</li>
-                <li><a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
-            </ul>
-        </aside>
 
-        <main class="main-content">
-            <header class="top-bar">
-                <div class="page-title"><h1>Edit Profile</h1></div>
-            </header>
+            <nav class="nav-links">
+                <a href="index2.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About Us</a>
+                <a href="help.html">Help</a>
+            </nav>
 
-            <div class="content-padding">
-                <div class="card card-padded">
-                    <div class="card-header">
-                        <h3>Update Information</h3>
+            <div class="user-dropdown">
+                <div class="user-trigger" onclick="toggleDropdown()">
+                    <div class="user-avatar">AZ</div> <span class="user-name-label">Amier Zhafran</span>
+                    <i class="fas fa-caret-down" style="color:#888;"></i>
+                </div>
+
+                <div class="dropdown-menu" id="userMenu">
+                    <div class="dropdown-header-info">
+                        <span class="signed-text">Signed in as</span>
+                        <span class="role-text">Attendee</span>
                     </div>
-                    
-                    <form action="#" method="POST" class="admin-form">
+                    <a href="attendee-profile-view.html" class="dropdown-item active"><i class="fas fa-user"></i> My Profile</a>
+                    <a href="tickets.html" class="dropdown-item"><i class="fas fa-ticket-alt"></i> My Ticket History</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="index.html" class="dropdown-item logout-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container single-box-container">
+        <div class="main-card">
+            
+            <div class="card-sidebar" style="justify-content: flex-start; padding-top: 50px;">
+                <div style="font-size: 50px; color: #FFC107; margin-bottom: 15px;">
+                    <i class="fas fa-user-edit"></i>
+                </div>
+                <div class="profile-username" style="font-size: 20px;">Amier Zhafran</div>
+                <p style="color: #888; font-size: 14px; margin-top: 5px;">Edit Mode</p>
+            </div>
+
+            <div class="card-content">
+                
+                <div class="form-body">
+                    <div class="card-header-flex">
+                        <h1>Edit Information</h1>
+                        <div class="action-links">
+                            <a href="attendee-profile-view.html" class="cancel-link">Cancel</a>
+                        </div>
+                    </div>
+
+                    <form action="attendee-profile-view.html">
                         
-                        <div class="form-row">
+                        <div class="form-grid">
                             <div class="form-group">
-                                <label>First Name <span>*</span></label>
-                                <input type="text" name="FName" value="Super" class="form-input" required>
+                                <label>First Name</label>
+                                <div class="input-icon-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" name="FName" value="Amier" required>
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label>Last Name <span>*</span></label>
-                                <input type="text" name="LName" value="Admin" class="form-input" required>
+                                <label>Last Name</label>
+                                <div class="input-icon-wrapper">
+                                    <i class="fas fa-user input-icon"></i>
+                                    <input type="text" name="LName" value="Zhafran" required>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div class="form-grid">
                             <div class="form-group">
                                 <label>Username (Read Only)</label>
-                                <input type="text" name="username" value="superadmin" class="form-input" readonly style="background:#f9f9f9; color:#777;">
+                                <div class="input-icon-wrapper">
+                                    <i class="fas fa-id-badge input-icon"></i>
+                                    <input type="text" name="username" value="amierzhafran" readonly style="background-color: #eee; cursor: not-allowed;">
+                                </div>
                             </div>
                             <div class="form-group">
-                                <label>Gender <span>*</span></label>
-                                <select name="gender" class="form-select">
-                                    <option value="Male" selected>Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
+                                <label>Gender</label>
+                                <div class="input-icon-wrapper">
+                                    <i class="fas fa-venus-mars input-icon"></i>
+                                    <select name="gender">
+                                        <option value="Male" selected>Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="form-row">
+                        <div class="form-grid">
                             <div class="form-group">
-                                <label>Email Address <span>*</span></label>
-                                <input type="email" name="email" value="admin@dizaet.com" class="form-input" required>
+                                <label>Email Address</label>
+                                <div class="input-icon-wrapper">
+                                    <i class="fas fa-envelope input-icon"></i>
+                                    <input type="email" name="email" value="amier@student.uitm.edu.my" required>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <label>Phone Number</label>
-                                <input type="tel" name="phoneNumber" value="+60 12-999 8888" class="form-input">
+                                <div class="input-icon-wrapper">
+                                    <i class="fas fa-phone input-icon"></i>
+                                    <input type="tel" name="phone" value="+60 12-345 6789">
+                                </div>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label>Role Level (Read Only)</label>
-                            <input type="text" value="Super Admin" class="form-input" readonly style="background:#f9f9f9; color:#777;">
+                            <label>Registered Address</label>
+                            <div class="input-icon-wrapper">
+                                <i class="fas fa-map-marker-alt input-icon"></i>
+                                <input type="text" name="address" value="No 12, Jalan Bestari, UiTM Machang, 18500 Machang, Kelantan">
+                            </div>
                         </div>
 
-                        <div class="form-actions">
-                            <a href="admin-profile-view.html" class="btn-cancel">Cancel</a>
-                            <button type="submit" class="btn-primary"><i class="fas fa-check"></i> Save Changes</button>
+                        <div style="margin: 30px 0 20px 0; border-top: 1px solid #eee; padding-top: 20px;">
+                            <h3 style="font-size: 16px; margin-bottom: 15px; color: #333;"><i class="fas fa-lock"></i> Change Password</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>New Password</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-key input-icon"></i>
+                                        <input type="password" name="new_password" placeholder="Leave blank to keep current">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label>Confirm Password</label>
+                                    <div class="input-icon-wrapper">
+                                        <i class="fas fa-check-circle input-icon"></i>
+                                        <input type="password" name="confirm_password" placeholder="Confirm new password">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
+                        <button type="submit" class="btn-bottom-update">Save Changes</button>
+
                     </form>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZA Event Ticket" class="footer-logo">
+                <p>Your one-stop platform for all event ticketing needs.</p>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>Contact Us</h4>
+                <div class="contact-details">
+                    <p><b>Hotline:</b> <br> +60 16-262 4834</p>
+                    <p><b>Email:</b> <br> support@grab.uitm.edu.my</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DIZAZ Group. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDropdown() {
+            var menu = document.getElementById("userMenu");
+            menu.classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.closest('.user-dropdown')) {
+                document.getElementById("userMenu").classList.remove("show");
+            }
+        }
+    </script>
 </body>
 </html>
