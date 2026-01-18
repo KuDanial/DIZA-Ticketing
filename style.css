@@ -1767,3 +1767,385 @@ select {
         grid-template-columns: 1fr;
     }
 }
+
+/* ===== EXTRACTED FROM help.html ===== */
+/* --- CORE VARIABLES --- */
+:root {
+    --support-dark: #111111;
+    --support-card-bg: #1e1e1e;
+    --support-text-muted: #aaa;
+    --primary-yellow: #FFC107;
+}
+
+/* --- HERO SECTION --- */
+.support-hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/background1.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    color: white;
+    position: relative;
+}
+
+.support-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.support-hero p {
+    font-size: 1.1rem;
+    color: #ddd;
+    margin-bottom: 35px;
+    max-width: 600px;
+}
+
+/* --- SEARCH BAR --- */
+.support-search-container {
+    width: 100%;
+    max-width: 550px;
+    position: relative;
+}
+
+.support-search-container input {
+    width: 100%;
+    padding: 18px 25px 18px 55px;
+    border-radius: 50px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.support-search-container input::placeholder {
+    color: rgba(255,255,255,0.7);
+}
+
+.support-search-container input:focus {
+    background: rgba(255,255,255,0.25);
+    border-color: var(--primary-yellow);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.support-search-container i {
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--primary-yellow);
+    font-size: 18px;
+    pointer-events: none;
+}
+
+/* --- FLOATING CARDS CONTAINER --- */
+.support-content-wrapper {
+    background-color: var(--support-dark);
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.support-grid {
+    max-width: 1100px;
+    margin: -60px auto 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+.support-card {
+    background: var(--support-card-bg);
+    padding: 40px 30px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-top: 4px solid transparent;
+    text-decoration: none;
+    color: white;
+    flex: 1;
+    min-width: 280px;
+    max-width: 320px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.support-card:hover {
+    transform: translateY(-10px);
+    border-top: 4px solid var(--primary-yellow);
+    background: #2a2a2a;
+}
+
+.support-card i {
+    font-size: 35px;
+    color: var(--primary-yellow);
+    margin-bottom: 20px;
+    background: rgba(244, 208, 63, 0.1);
+    padding: 20px;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.support-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.support-card p {
+    color: var(--support-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- FAQ SECTION --- */
+.faq-section {
+    background-color: #f4f6f9;
+    padding: 80px 20px;
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.faq-header h2 {
+    color: #222;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.faq-item {
+    background: #fff;
+    border: 1px solid #e1e4e8;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+}
+
+.faq-question {
+    padding: 20px 25px;
+    cursor: pointer;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    color: #333;
+    transition: background 0.2s;
+}
+
+.faq-question:hover {
+    background-color: #f8f9fa;
+}
+
+.faq-question span {
+    font-size: 1rem;
+}
+
+.faq-question i {
+    transition: transform 0.3s;
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+    color: var(--primary-yellow);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background: #fff;
+    color: #555;
+    line-height: 1.6;
+}
+
+.faq-item.active .faq-answer {
+    padding: 20px 25px;
+    max-height: 300px;
+    border-top: 1px solid #f0f0f0;
+}
+
+/* --- CONTACT FORM --- */
+.contact-section {
+    background-color: #fff;
+    padding: 50px 20px 80px;
+    text-align: center;
+    border-top: 1px solid #eee;
+}
+
+.contact-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    text-align: left;
+    margin-top: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #444;
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-control:focus {
+    border-color: #333;
+    outline: none;
+}
+
+textarea.form-control {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Help.html responsive */
+@media (max-width: 768px) {
+    .support-hero {
+        height: auto;
+        padding: 60px 20px 100px;
+    }
+    .support-grid {
+        margin-top: -80px;
+    }
+}
+
+/* =========================================
+   Extracted from tickets.html
+   ========================================= */
+.history-container {
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    min-height: 60vh;
+}
+
+.page-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #f4f4f4;
+    padding-bottom: 10px;
+}
+
+.ticket-header h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.ticket-body {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.ticket-img {
+    width: 100px;
+    height: 70px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.ticket-details {
+    flex: 1;
+}
+
+.ticket-meta {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.ticket-meta i {
+    width: 20px;
+    color: #FFC107;
+    text-align: center;
+}
+
+.ticket-footer {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.booking-id {
+    font-family: monospace;
+    background: #f9f9f9;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #555;
+    font-size: 12px;
+}
+
+/* Status Badges for Tickets */
+.status-badge {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+.status-confirmed { background: #e8f5e9; color: #2e7d32; }
+.status-past { background: #f5f5f5; color: #757575; }
+.status-cancelled { background: #ffebee; color: #c62828; }
+
+@media (max-width: 600px) {
+    .ticket-body { flex-direction: column; align-items: flex-start; }
+    .ticket-footer { flex-direction: column; gap: 10px; align-items: flex-start; }
+    .ticket-img { width: 100%; height: 120px; }
+}

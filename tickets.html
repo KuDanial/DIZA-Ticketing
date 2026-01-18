@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ticket History | DIZA Event Ticket</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="attendee-dashboard.html" class="logo">
+                <img src="images/DIZAET_Logo.png" alt="DIZA Event Ticket">
+            </a>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Search for events, concerts, activities...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+
+            <nav class="nav-links">
+                <a href="attendee-dashboard.html">Home</a>
+                <a href="events.html">Events</a>
+                <a href="about.html">About Us</a>
+                <a href="help.html">Help</a>
+            </nav>
+
+            <div class="user-dropdown">
+                <div class="user-trigger" onclick="toggleDropdown()">
+                    <div class="user-avatar">AZ</div> <span class="user-name-label">Amier Zhafran</span>
+                    <i class="fas fa-caret-down" style="color:#888;"></i>
+                </div>
+
+                <div class="dropdown-menu" id="userMenu">
+                    <div class="dropdown-header-info">
+                        <span class="signed-text">Signed in as</span>
+                        <span class="role-text">Attendee</span>
+                    </div>
+                    <a href="attendee-profile-view.html" class="dropdown-item"><i class="fas fa-user"></i> My Profile</a>
+                    <a href="tickets.html" class="dropdown-item active"><i class="fas fa-ticket-alt"></i> My Ticket History</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="index.html" class="dropdown-item logout-item"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="history-container">
+        <div class="page-header">
+            <h2>My Ticket History</h2>
+        </div>
+
+        <div class="booking-section">
+            <div class="ticket-header">
+                <span class="booking-id">Booking ID: #BK-2024-8821</span>
+                <span class="status-badge status-confirmed">Confirmed</span>
+            </div>
+            
+            <div class="ticket-body">
+                <img src="images/event1.png" alt="Event Banner" class="ticket-img">
+                <div class="ticket-details">
+                    <h3>Tech Innovation Summit 2024</h3>
+                    <div class="ticket-meta" style="margin-top: 8px;">
+                        <i class="far fa-calendar-alt"></i> 12 Dec 2024 &nbsp;|&nbsp; 09:00 AM
+                    </div>
+                    <div class="ticket-meta">
+                        <i class="fas fa-map-marker-alt"></i> KL Convention Centre
+                    </div>
+                    <div class="ticket-meta">
+                        <i class="fas fa-ticket-alt"></i> 1x General Admission
+                    </div>
+                </div>
+                <div class="ticket-price-block" style="text-align: right;">
+                    <div style="font-size: 12px; color: #888;">Total Paid</div>
+                    <div style="font-size: 20px; font-weight: bold; color: #2e7d32;">RM 150.00</div>
+                </div>
+            </div>
+
+            <div class="ticket-footer">
+                <div style="font-size: 13px; color: #666;">
+                    <i class="fas fa-check-circle" style="color: #2e7d32;"></i> Payment Successful via FPX
+                </div>
+                <div>
+                    <button class="btn-buy" style="background: transparent; border: 1px solid #333;">Download Invoice</button>
+                    <button class="btn-primary" style="margin-left: 10px;">View QR Code</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-section">
+            <div class="ticket-header">
+                <span class="booking-id">Booking ID: #BK-2024-9902</span>
+                <span class="status-badge status-confirmed">Confirmed</span>
+            </div>
+            
+            <div class="ticket-body">
+                <img src="images/event2.png" alt="Event Banner" class="ticket-img">
+                <div class="ticket-details">
+                    <h3>Borneo Half Marathon 2025</h3>
+                    <div class="ticket-meta" style="margin-top: 8px;">
+                        <i class="far fa-calendar-alt"></i> 10 Feb 2025 &nbsp;|&nbsp; 06:30 AM
+                    </div>
+                    <div class="ticket-meta">
+                        <i class="fas fa-map-marker-alt"></i> Kota Kinabalu, Sabah
+                    </div>
+                    <div class="ticket-meta">
+                        <i class="fas fa-ticket-alt"></i> 2x Runner Pass
+                    </div>
+                </div>
+                <div class="ticket-price-block" style="text-align: right;">
+                    <div style="font-size: 12px; color: #888;">Total Paid</div>
+                    <div style="font-size: 20px; font-weight: bold; color: #2e7d32;">RM 240.00</div>
+                </div>
+            </div>
+
+            <div class="ticket-footer">
+                <div style="font-size: 13px; color: #666;">
+                    <i class="fas fa-check-circle" style="color: #2e7d32;"></i> Payment Successful via Credit Card
+                </div>
+                <div>
+                    <button class="btn-buy" style="background: transparent; border: 1px solid #333;">Download Invoice</button>
+                    <button class="btn-primary" style="margin-left: 10px;">View QR Code</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="booking-section" style="opacity: 0.8;">
+            <div class="ticket-header">
+                <span class="booking-id">Booking ID: #BK-2023-1101</span>
+                <span class="status-badge status-past">Completed</span>
+            </div>
+            
+            <div class="ticket-body">
+                <img src="images/event3.png" alt="Event Banner" class="ticket-img" style="filter: grayscale(100%);">
+                <div class="ticket-details">
+                    <h3 style="color: #666;">Crayon Shinchan Space Expo</h3>
+                    <div class="ticket-meta" style="margin-top: 8px;">
+                        <i class="far fa-calendar-alt"></i> 14 Jan 2023
+                    </div>
+                    <div class="ticket-meta">
+                        <i class="fas fa-map-marker-alt"></i> Pavilion KL
+                    </div>
+                    <div class="ticket-meta">
+                        <i class="fas fa-ticket-alt"></i> 3x Child Pass
+                    </div>
+                </div>
+                <div class="ticket-price-block" style="text-align: right;">
+                    <div style="font-size: 12px; color: #888;">Total Paid</div>
+                    <div style="font-size: 20px; font-weight: bold; color: #555;">RM 90.00</div>
+                </div>
+            </div>
+
+            <div class="ticket-footer">
+                <div style="font-size: 13px; color: #666;">
+                    <i class="fas fa-history"></i> Event Ended
+                </div>
+                <div>
+                    <button class="btn-buy" style="background: transparent; border: 1px solid #ccc; color: #888;">Invoice</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col brand-col">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZA Event Ticket" class="footer-logo">
+                <p>Your one-stop platform for all event ticketing needs.</p>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>Contact Us</h4>
+                <div class="contact-details">
+                    <p><b>Hotline:</b> <br> +60 16-262 4834</p>
+                    <p><b>Email:</b> <br> support@grab.uitm.edu.my</p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 DIZAZ Group. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDropdown() {
+            var menu = document.getElementById("userMenu");
+            menu.classList.toggle("show");
+        }
+        window.onclick = function(event) {
+            if (!event.target.closest('.user-dropdown')) {
+                document.getElementById("userMenu").classList.remove("show");
+            }
+        }
+    </script>
+</body>
+</html>
