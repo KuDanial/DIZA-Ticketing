@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Attendee</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styledashboard.css">
+</head>
+<body class="admin-theme">
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
+                <h2>EventApp <span class="badge">ADMIN</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="menu-header">User Management</li>
+                <li class="active"><a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a></li>
+                <li><a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a></li>
+                <li><a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
+                <li class="menu-header">System</li>
+                <li><a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title"><h1>Edit Attendee</h1></div>
+            </header>
+
+            <div class="content-padding">
+                <div class="card card-padded">
+                    <div class="card-header">
+                        <h3>Update Information</h3>
+                        <span class="optional-tag">ID: #ATT-045</span>
+                    </div>
+                    
+                    <form action="#" method="POST" class="admin-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span>*</span></label>
+                                <input type="text" name="FName" value="John" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span>*</span></label>
+                                <input type="text" name="LName" value="Doe" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address <span>*</span></label>
+                                <input type="email" name="email" value="john@email.com" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number <span>*</span></label>
+                                <input type="tel" name="phoneNumber" value="+60 19-888 7777" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Username (Read Only)</label>
+                                <input type="text" name="username" value="john_doe" class="form-input" readonly style="background:#f9f9f9; color:#777;">
+                            </div>
+                            <div class="form-group">
+                                <label>Gender <span>*</span></label>
+                                <select name="gender" class="form-select">
+                                    <option value="Male" selected>Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Shipping/Billing Address</label>
+                            <textarea name="shippingAddress" class="form-textarea">123, Jalan Ampang, 50450 Kuala Lumpur, Malaysia</textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <a href="manage-attendees.html" class="btn-cancel">Cancel</a>
+                            <button type="submit" class="btn-primary"><i class="fas fa-check"></i> Update Attendee</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

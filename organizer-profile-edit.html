@@ -3,13 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organizer Profile - EventApp</title>
+    <title>Edit Profile - Organizer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styledashboard.css">
-    
 </head>
 <body class="org-theme">
-
     <div class="dashboard-container">
         
         <aside class="sidebar">
@@ -17,207 +15,104 @@
                 <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
                 <h2>EventApp <span class="badge">ORG</span></h2>
             </div>
-            
             <ul class="nav-links">
-                <li>
-                    <a href="organizer-dashboard.html"><i class="fas fa-home"></i> Dashboard</a>
-                </li>
-                
+                <li><a href="organizer-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
                 <li class="menu-header">My Events</li>
-                <li>
-                    <a href="organizer-events-addNew.html"><i class="fas fa-plus-circle"></i> Create New Event</a>
-                </li>
-                <li>
-                    <a href="organizer-events.html"><i class="fas fa-calendar-alt"></i> My Events List</a>
-                </li>
-                
+                <li><a href="organizer-events-addNew.html"><i class="fas fa-plus-circle"></i> Create New Event</a></li>
+                <li><a href="organizer-events.html"><i class="fas fa-calendar-alt"></i> My Events List</a></li>
                 <li class="menu-header">Account</li>
-                <li class="active">
-                    <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> Org Profile</a>
-                </li>
+                <li class="active"><a href="organizer-profile-view.html"><i class="fas fa-user-cog"></i> Org Profile</a></li>
             </ul>
         </aside>
 
         <main class="main-content">
-            
             <header class="top-bar">
-                <div class="page-title">
-                    <h1>Organization Profile</h1>
-                </div>
-
-                <div class="user-menu">
-                    <button class="user-btn" onclick="toggleDropdown()">
-                        <img src="https://ui-avatars.com/api" alt="Org" class="avatar">
-                        <span class="username">Tech Giants Co.</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    
-                    <div class="dropdown-content" id="orgDropdown">
-                        <div class="dropdown-header">
-                            <p>Logged in as Organizer</p>
-                        </div>
-                        <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> My Profile</a>
-                        <div class="divider"></div>
-                        <a href="index.html" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
-                    </div>
-                </div>
+                <div class="page-title"><h1>Edit Profile</h1></div>
             </header>
 
             <div class="content-padding">
-                
-                <div class="profile-container">
+                <div class="card card-padded">
+                    <div class="card-header">
+                        <h3>Update Information</h3>
+                    </div>
                     
-                    <div class="profile-left">
-                        <div class="card profile-card">
-                            <div class="profile-img-container">
-                                <img src="https://ui-avatars.com/api" alt="Avatar">
-                                <button class="edit-avatar-btn" title="Change Avatar"><i class="fas fa-camera"></i></button>
-                            </div>
-                            <h2 style="font-size: 20px;">John Doe</h2> 
-                            <p class="email-text">john.doe@email.com</p>
-                            
-                            <div class="profile-meta">
-                                <span><i class="fas fa-calendar-check"></i> Joined: Nov 2023</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="profile-right">
+                    <form action="#" method="POST" class="org-form">
                         
-                        <div class="card card-padded">
-                            <div class="card-header">
-                                <h3>Personal Information</h3>
-                                <span class="optional-tag">Required</span>
+                        <div class="form-section-title">Personal Information</div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span>*</span></label>
+                                <input type="text" name="FName" value="John" class="form-input" required>
                             </div>
-                            <form action="#" class="org-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label>First Name <span>*</span></label>
-                                        <input type="text" value="John" class="form-input" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Last Name <span>*</span></label>
-                                        <input type="text" value="Doe" class="form-input" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label>Email Address <span>*</span></label>
-                                        <input type="email" value="john.doe@email.com" class="form-input" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Phone Number <span>*</span></label>
-                                        <input type="tel" value="+60 12-345 6789" class="form-input" required>
-                                    </div>
-                                </div>
-
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label>Username <span>*</span></label>
-                                        <input type="text" value="johndoe_organizer" class="form-input" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Gender <span>*</span></label>
-                                        <select class="form-select" required>
-                                            <option value="" disabled selected>Select Gender</option>
-                                            <option value="male" selected>Male</option>
-                                            <option value="female">Female</option>
-                                        </select>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label>Street Address <span>*</span></label>
-                                    <input type="text" value="123 Jalan Ampang, Kuala Lumpur" class="form-input" required>
-                                </div>
-
-                                <div class="form-actions">
-                                    <button type="submit" class="btn-save">Save Personal Info</button>
-                                </div>
-                            </form>
+                            <div class="form-group">
+                                <label>Last Name <span>*</span></label>
+                                <input type="text" name="LName" value="Doe" class="form-input" required>
+                            </div>
                         </div>
 
-                        <div class="card card-padded">
-                            <div class="card-header">
-                                <h3>Organization Details</h3>
-                                <span class="optional-tag">Optional</span>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Username (Read Only)</label>
+                                <input type="text" name="username" value="johndoe_organizer" class="form-input" readonly style="background:#f9f9f9; color:#777;">
                             </div>
-                            <form action="#" class="org-form">
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label>Company Name</label>
-                                        <input type="text" value="Tech Giants Co." class="form-input">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Business Phone Number</label>
-                                        <input type="tel" value="+60 3-8888 9999" class="form-input">
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <label>Business Email</label>
-                                    <input type="email" value="contact@techgiants.com" class="form-input">
-                                </div>
-
-                                <div class="form-group">
-                                    <label>About Description</label>
-                                    <textarea class="form-textarea" placeholder="Tell us about your organization...">Leading tech event organizer...</textarea>
-                                </div>
-
-                                <div class="form-actions">
-                                    <button type="submit" class="btn-save">Save Org Details</button>
-                                </div>
-                            </form>
+                            <div class="form-group">
+                                <label>Gender <span>*</span></label>
+                                <select name="gender" class="form-select">
+                                    <option value="Male" selected>Male</option>
+                                    <option value="Female">Female</option>
+                                </select>
+                            </div>
                         </div>
 
-                        <div class="card card-padded">
-                            <div class="card-header">
-                                <h3>Security Settings</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address <span>*</span></label>
+                                <input type="email" name="email" value="john.doe@email.com" class="form-input" required>
                             </div>
-                            <form action="#" class="org-form">
-                                <div class="form-group">
-                                    <label>Current Password</label>
-                                    <input type="password" placeholder="Enter current password" class="form-input">
-                                </div>
-                                <div class="form-row">
-                                    <div class="form-group">
-                                        <label>New Password <span>*</span></label>
-                                        <input type="password" placeholder="Min 8 characters" class="form-input">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Confirm Password <span>*</span></label>
-                                        <input type="password" placeholder="Confirm new password" class="form-input">
-                                    </div>
-                                </div>
-                                <div class="form-actions">
-                                    <button type="submit" class="btn-outline">Update Password</button>
-                                </div>
-                            </form>
+                            <div class="form-group">
+                                <label>Phone Number <span>*</span></label>
+                                <input type="tel" name="phoneNumber" value="+60 12-345 6789" class="form-input" required>
+                            </div>
                         </div>
 
-                    </div>
+                        <div class="form-section-title">Organization Details</div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Company Name <span>*</span></label>
+                                <input type="text" name="companyName" value="Tech Giants Co." class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Business Phone <span>*</span></label>
+                                <input type="tel" name="businessPhone" value="+60 3-8888 9999" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Business Email</label>
+                                <input type="email" name="businessEmail" value="contact@techgiants.com" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Website URL</label>
+                                <input type="url" name="websiteUrl" value="https://techgiants.com" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>About Description</label>
+                            <textarea name="aboutDescription" class="form-textarea">Leading tech event organizer specializing in hackathons and summits.</textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <a href="organizer-profile-view.html" class="btn-cancel">Cancel</a>
+                            <button type="submit" class="btn-primary"><i class="fas fa-check"></i> Save Changes</button>
+                        </div>
+                    </form>
                 </div>
-
             </div>
         </main>
     </div>
-
-    <script>
-        function toggleDropdown() {
-            document.getElementById("orgDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-            if (!event.target.closest('.user-btn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-    </script>
 </body>
 </html>

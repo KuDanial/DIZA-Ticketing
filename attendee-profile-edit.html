@@ -3,216 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DIZA Event Ticket | Personal Info</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Edit Profile - Admin</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
+    <link rel="stylesheet" href="styledashboard.css">
 </head>
-<body>
-
-    <header class="navbar">
-        <div class="container nav-container">
-            <a href="index2.html" class="logo">
-                <img src="images/DIZAET_Logo.png" alt="DIZA Event Ticket">
-            </a>
-
-            <div class="search-bar">
-                <input type="text" placeholder="Search for events, concerts, activities...">
-                <button><i class="fas fa-search"></i></button>
+<body class="admin-theme">
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
+                <h2>EventApp <span class="badge">ADMIN</span></h2>
             </div>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="menu-header">User Management</li>
+                <li><a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a></li>
+                <li><a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a></li>
+                <li><a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
+                <li class="menu-header">System</li>
+                <li><a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
+            </ul>
+        </aside>
 
-            <nav class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <a href="events.html">Events</a>
-                <a href="about.html">About Us</a>
-                <a href="help.html">Help</a>
-            </nav>
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title"><h1>Edit Profile</h1></div>
+            </header>
 
-            <div class="user-dropdown">
-                <div class="user-trigger" onclick="toggleDropdown()">
-                    <div class="user-avatar">AZ</div> <span class="user-name-label">Amier Zhafran</span>
-                    <i class="fas fa-caret-down" style="color:#888;"></i>
-                </div>
-
-                <div class="dropdown-menu" id="userMenu">
-                    <div class="dropdown-header-info">
-                        <span class="signed-text">Signed in as</span>
-                        <span class="role-text">User</span>
+            <div class="content-padding">
+                <div class="card card-padded">
+                    <div class="card-header">
+                        <h3>Update Information</h3>
                     </div>
-
-                    <a href="profile.html" class="dropdown-item" id="menu-my-profile">
-                        <i class="fas fa-user"></i> My Profile
-                    </a>
-                    <a href="tickets.html" class="dropdown-item" id="menu-ticket-history"> <i class="fas fa-ticket-alt"></i> My Ticket History
-                    </a>
-
-                    <div class="dropdown-divider"></div>
-
-                    <a href="organizer-profile.html" class="dropdown-item" id="menu-org-profile">
-                        <i class="fas fa-building"></i> Organizer Profile
-                    </a>
-                    <a href="organizer-dashboard.html" class="dropdown-item" id="menu-org-dashboard">
-                        <i class="fas fa-chart-line"></i> Organizer Dashboard
-                    </a>
-
-                    <div class="dropdown-divider"></div>
-
-                    <a href="index.html" class="dropdown-item logout-item">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </a>
-                </div>
-            </div>
-
-        </div>
-    </header>
-
-    <main class="single-box-container">
-        <form action="updateProfile" method="POST" enctype="multipart/form-data">
-            <div class="main-card">
-                
-                <div class="card-sidebar">
-                    <div class="avatar-container">
-                        <img src="images/member4profile.png" id="avatarPreview" alt="Profile" class="sidebar-avatar">
-                        <label for="avatarInput" class="btn-edit-avatar">
-                            <i class="fas fa-camera"></i>
-                        </label>
-                        <input type="file" id="avatarInput" name="profilePhoto" style="display:none" accept="image/*" onchange="previewImage(this, 'avatarPreview')">
-                    </div>
-                    <span class="profile-username">amierzhafran</span>
-                    </div>
-
-                <div class="card-content">
-                    <div class="cover-section">
-                        <img src="images/background1.jpg" id="coverPreview" class="cover-photo-img" alt="Cover">
-                        <label for="coverInput" class="btn-change-cover">
-                            <i class="fas fa-image"></i> Change Cover
-                        </label>
-                        <input type="file" id="coverInput" name="coverPhoto" style="display:none" accept="image/*" onchange="previewImage(this, 'coverPreview')">
-                    </div>
-
-                    <div class="form-body">
-                        <div class="card-header-flex">
-                            <h1>Personal Info</h1>
-                            <div class="action-links">
-                                <a href="#" class="update-link"><i class="fas fa-share-alt"></i> Update</a>
-                                <span style="color: #ddd;">|</span>
-                                <a href="profile.html" class="cancel-link">Cancel</a>
+                    
+                    <form action="#" method="POST" class="admin-form">
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span>*</span></label>
+                                <input type="text" name="FName" value="Super" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span>*</span></label>
+                                <input type="text" name="LName" value="Admin" class="form-input" required>
                             </div>
                         </div>
 
-                        <p style="color: #888; font-size: 14px; margin-bottom: 30px;">
-                            Manage your personal information, including phone numbers and email address where you can be contacted.
-                        </p>
-
-                        <div class="form-grid">
+                        <div class="form-row">
                             <div class="form-group">
-                                <label>First Name <span>*</span></label>
-                                <input type="text" name="firstName" value="Amier" required>
+                                <label>Username (Read Only)</label>
+                                <input type="text" name="username" value="superadmin" class="form-input" readonly style="background:#f9f9f9; color:#777;">
                             </div>
-
-                            <div class="form-group">
-                                <label>Last Name <span>*</span></label>
-                                <input type="text" name="lastName" value="Zhafran" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Email Address <span>*</span></label>
-                                <input type="email" name="email" value="zhafran.amier02@gmail.com" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="text" name="phoneNumber" value="0108676714">
-                            </div>
-
-                            <div class="form-group">
-                                <label>Username <span>*</span></label>
-                                <input type="text" name="username" value="amierzhafran" required>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Password <span>*</span></label>
-                                <input type="password" name="password" placeholder="Enter new password" required>
-                            </div>
-
                             <div class="form-group">
                                 <label>Gender <span>*</span></label>
-                                <select name="gender" required>
+                                <select name="gender" class="form-select">
                                     <option value="Male" selected>Male</option>
                                     <option value="Female">Female</option>
                                 </select>
                             </div>
+                        </div>
 
+                        <div class="form-row">
                             <div class="form-group">
-                                <label>Street Address <span>*</span></label>
-                                <input type="text" name="address" value="Bachok" required>
+                                <label>Email Address <span>*</span></label>
+                                <input type="email" name="email" value="admin@dizaet.com" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" name="phoneNumber" value="+60 12-999 8888" class="form-input">
                             </div>
                         </div>
 
-                        <button type="submit" class="btn-bottom-update">Update Info</button>
-                    </div>
+                        <div class="form-group">
+                            <label>Role Level (Read Only)</label>
+                            <input type="text" value="Super Admin" class="form-input" readonly style="background:#f9f9f9; color:#777;">
+                        </div>
+
+                        <div class="form-actions">
+                            <a href="admin-profile-view.html" class="btn-cancel">Cancel</a>
+                            <button type="submit" class="btn-primary"><i class="fas fa-check"></i> Save Changes</button>
+                        </div>
+                    </form>
                 </div>
             </div>
-        </form>
-    </main>
-    <script>
-        function previewImage(input, previewId) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
-                reader.onload = function(e) {
-                    document.getElementById(previewId).src = e.target.result;
-                }
-                reader.readAsDataURL(input.files[0]);
-            }
-        }
-
-        function toggleDropdown() {
-            var menu = document.getElementById("userMenu");
-            if (menu.style.display === "flex") {
-                menu.style.display = "none";
-            } else {
-                menu.style.display = "flex";
-            }
-        }
-
-        // Close dropdown when clicking outside
-        window.onclick = function(event) {
-            if (!event.target.closest('.user-dropdown')) {
-                document.getElementById("userMenu").style.display = "none";
-            }
-        }
-
-        function updateUserMenu(role) {
-            const roleText = document.querySelector('.role-text');
-            roleText.textContent = role.charAt(0).toUpperCase() + role.slice(1);
-            const myProfile = document.getElementById('menu-my-profile');
-            const ticketHistory = document.getElementById('menu-ticket-history');
-            const orgProfile = document.getElementById('menu-org-profile');
-            const orgDashboard = document.getElementById('menu-org-dashboard');
-            if (role === 'attendee') {
-                myProfile.style.display = 'block';
-                ticketHistory.style.display = 'block';
-                orgProfile.style.display = 'none';
-                orgDashboard.style.display = 'none';
-            } else if (role === 'organizer') {
-                myProfile.style.display = 'none';
-                ticketHistory.style.display = 'none';
-                orgProfile.style.display = 'block';
-                orgDashboard.style.display = 'block';
-                orgDashboard.textContent = 'Organizer Dashboard';
-                orgDashboard.href = 'organizer-dashboard.html';
-            } else if (role === 'admin') {
-                myProfile.style.display = 'none';
-                ticketHistory.style.display = 'none';
-                orgProfile.style.display = 'block';
-                orgDashboard.style.display = 'block';
-                orgDashboard.textContent = 'Admin Dashboard';
-                orgDashboard.href = 'admin-dashboard.html';
-            }
-        }
-
-        // Call the function on page load
-        updateUserMenu('attendee');
-    </script>
+        </main>
+    </div>
 </body>
 </html>

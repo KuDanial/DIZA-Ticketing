@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Admin Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styledashboard.css">
+    <style>
+        .view-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; font-weight: 600; }
+        .view-value { font-size: 15px; color: #333; margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
+        .role-badge.super { background-color: #efebe9; color: #795548; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+    </style>
+</head>
+<body class="admin-theme">
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
+                <h2>EventApp <span class="badge">ADMIN</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="menu-header">User Management</li>
+                <li><a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a></li>
+                <li><a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a></li>
+                <li><a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
+                <li class="menu-header">System</li>
+                <li class="active"><a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title"><h1>Admin Details</h1></div>
+            </header>
+
+            <div class="content-padding">
+                <div class="card card-padded">
+                    <div class="card-header">
+                        <h3>Profile Overview</h3>
+                        <a href="manage-admins.html" class="btn-cancel" style="font-size:12px;">&larr; Back to List</a>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="view-label">Admin ID</div>
+                            <div class="view-value">#ADM-001</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="view-label">Role</div>
+                            <div class="view-value"><span class="role-badge super">Super Admin</span></div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="view-label">First Name</div>
+                            <div class="view-value">Super</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="view-label">Last Name</div>
+                            <div class="view-value">Admin</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="view-label">Username</div>
+                            <div class="view-value">superadmin</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="view-label">Email Address</div>
+                            <div class="view-value">admin@dizaet.com</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="view-label">Phone</div>
+                        <div class="view-value">+60 12-999 8888</div>
+                    </div>
+
+                    <div class="form-actions">
+                        <a href="manage-admins-edit.html" class="btn-primary">
+                            <i class="fas fa-pen"></i> Edit Admin
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

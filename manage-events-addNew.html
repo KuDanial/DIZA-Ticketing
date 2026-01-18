@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Event</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styledashboard.css">
+</head>
+<body class="admin-theme">
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
+                <h2>EventApp <span class="badge">ADMIN</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="menu-header">User Management</li>
+                <li><a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a></li>
+                <li><a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a></li>
+                <li class="active"><a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
+                <li class="menu-header">System</li>
+                <li><a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title"><h1>Add New Event</h1></div>
+            </header>
+
+            <div class="content-padding">
+                <div class="card card-padded">
+                    <div class="card-header">
+                        <h3>Event Details</h3>
+                        <a href="manage-events.html" class="btn-cancel" style="font-size:12px;">&larr; Back to List</a>
+                    </div>
+                    
+                    <form action="#" method="POST" class="admin-form">
+                        
+                        <div class="form-section-title">General Information</div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Event Title <span>*</span></label>
+                                <input type="text" name="title" class="form-input" placeholder="e.g. Tech Summit 2024" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Category <span>*</span></label>
+                                <select name="category" class="form-select" required>
+                                    <option value="" disabled selected>Select Category</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Music">Music</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Education">Education</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Description</label>
+                            <textarea name="description" class="form-textarea" placeholder="Describe the event..."></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ticket Price (RM) <span>*</span></label>
+                                <input type="number" name="price" class="form-input" step="0.01" placeholder="0.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Total Ticket Quantity <span>*</span></label>
+                                <input type="number" name="ticketQuantity" class="form-input" placeholder="e.g. 100" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Status <span>*</span></label>
+                                <select name="status" class="form-select">
+                                    <option value="Draft">Draft (Hidden)</option>
+                                    <option value="Published">Published (Visible)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Date & Time</div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Start Date & Time <span>*</span></label>
+                                <input type="datetime-local" name="startDate" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>End Date & Time <span>*</span></label>
+                                <input type="datetime-local" name="endDate" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Venue Information</div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Venue Name <span>*</span></label>
+                                <input type="text" name="venueName" class="form-input" placeholder="e.g. Grand Hall" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Venue Capacity</label>
+                                <input type="number" name="capacity" class="form-input" placeholder="e.g. 500">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Full Address <span>*</span></label>
+                            <textarea name="address" class="form-textarea" placeholder="Enter venue address..."></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="reset" class="btn-cancel">Reset</button>
+                            <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Create Event</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

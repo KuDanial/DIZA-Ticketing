@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Organizer Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styledashboard.css">
+    <style>
+        .view-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; font-weight: 600; }
+        .view-value { font-size: 15px; color: #333; margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
+        .stat-badge { background: #e3f2fd; color: #3498db; padding: 5px 10px; border-radius: 15px; font-size: 12px; font-weight: 600; }
+        .status.active { background-color: #e8f8f5; color: #2ecc71; padding: 4px 10px; border-radius: 20px; font-size: 11px; font-weight: 600; }
+    </style>
+</head>
+<body class="admin-theme">
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
+                <h2>EventApp <span class="badge">ADMIN</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="menu-header">User Management</li>
+                <li><a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a></li>
+                <li class="active"><a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a></li>
+                <li><a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
+                <li class="menu-header">System</li>
+                <li><a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title"><h1>Organizer Details</h1></div>
+            </header>
+
+            <div class="content-padding">
+                <div class="card card-padded">
+                    <div class="card-header">
+                        <h3>Profile Overview</h3>
+                        <a href="manage-organizers.html" class="btn-cancel" style="font-size:12px;">&larr; Back to List</a>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="view-label">User ID</div>
+                            <div class="view-value">#ORG-088</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="view-label">Account Status</div>
+                            <div class="view-value"><span class="status active">Active</span></div>
+                        </div>
+                    </div>
+
+                    <div class="form-section-title" style="margin-top: 10px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Personal Info</div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="view-label">First Name</div>
+                            <div class="view-value">Ahmad</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="view-label">Last Name</div>
+                            <div class="view-value">Razak</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="view-label">Username</div>
+                            <div class="view-value">ahmad_events</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="view-label">Email</div>
+                            <div class="view-value">ahmad@gmail.com</div>
+                        </div>
+                    </div>
+
+                    <div class="form-section-title" style="margin-top: 10px; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 5px;">Organization Info</div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="view-label">Company Name</div>
+                            <div class="view-value">Global Tech Events</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="view-label">Business Phone</div>
+                            <div class="view-value">+60 3-8888 9999</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <div class="view-label">Business Email</div>
+                            <div class="view-value">contact@globaltech.com</div>
+                        </div>
+                        <div class="form-group">
+                            <div class="view-label">Website</div>
+                            <div class="view-value"><a href="#" style="color:#3498db;">https://globaltech.com</a></div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="view-label">About Description</div>
+                        <div class="view-value">Leading organizer for technology and software conferences in Southeast Asia.</div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="view-label">Performance</div>
+                        <div class="view-value">
+                            <span class="stat-badge"><i class="fas fa-calendar-check"></i> 5 Events Created</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <a href="manage-organizers-edit.html" class="btn-primary">
+                            <i class="fas fa-pen"></i> Edit Organizer
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

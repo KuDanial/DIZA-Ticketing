@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Event - Organizer Panel</title>
+    <title>Create New Event</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styledashboard.css">
-    
 </head>
 <body class="org-theme">
-
     <div class="dashboard-container">
+        
         <aside class="sidebar">
             <div class="brand">
                 <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
@@ -34,160 +33,110 @@
                 
                 <li class="menu-header">Account</li>
                 <li>
-                    <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> Org Profile</a>
+                    <a href="organizer-profile-view.html"><i class="fas fa-user-cog"></i> Org Profile</a>
                 </li>
             </ul>
         </aside>
 
         <main class="main-content">
-            
             <header class="top-bar">
-                <div class="page-title">
-                    <h1>Create New Event</h1>
-                </div>
-
-                <div class="user-menu">
-                    <button class="user-btn" onclick="toggleDropdown()">
-                        <img src="https://ui-avatars.com/api" alt="Org" class="avatar">
-                        <span class="username">Tech Giants Co.</span>
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    
-                    <div class="dropdown-content" id="orgDropdown">
-                        <div class="dropdown-header">
-                            <p>Organizer Account</p>
-                        </div>
-                        <a href="organizer-profile.html"><i class="fas fa-user-cog"></i> My Profile</a>
-                        <div class="divider"></div>
-                        <a href="logout.html" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
-                    </div>
-                </div>
+                <div class="page-title"><h1>Create New Event</h1></div>
             </header>
 
             <div class="content-padding">
                 <div class="card card-padded">
-                    <form action="#" method="POST" class="form-organizer">
+                    <div class="card-header">
+                        <h3>Event Details</h3>
+                        <a href="organizer-events.html" class="btn-cancel" style="font-size:12px;">&larr; Back to List</a>
+                    </div>
+                    
+                    <form action="#" method="POST" class="org-form">
                         
-                        <div class="form-section-title">Basic Information</div>
+                        <div class="form-section-title">General Information</div>
                         
-                        <div class="form-group">
-                            <label class="form-label">Event Title <span>*</span></label>
-                            <input type="text" class="form-input" placeholder="e.g. Annual Tech Summit 2024" required>
-                        </div>
-
                         <div class="form-row">
                             <div class="form-group">
-                                <label class="form-label">Category <span>*</span></label>
-                                <select class="form-select" required>
+                                <label>Event Title <span>*</span></label>
+                                <input type="text" name="title" class="form-input" placeholder="e.g. Coding Workshop 2024" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Category <span>*</span></label>
+                                <select name="category" class="form-select" required>
                                     <option value="" disabled selected>Select Category</option>
-                                    <option value="tech">Technology</option>
-                                    <option value="music">Music & Concerts</option>
-                                    <option value="education">Education & Workshops</option>
-                                    <option value="business">Business & Networking</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Event Status</label>
-                                <select class="form-select">
-                                    <option value="draft">Draft (Hidden)</option>
-                                    <option value="published">Published (Public)</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Music">Music</option>
+                                    <option value="Business">Business</option>
+                                    <option value="Education">Education</option>
+                                    <option value="Sports">Sports</option>
                                 </select>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Description <span>*</span></label>
-                            <textarea class="form-textarea" placeholder="Describe what attendees can expect..." required></textarea>
+                            <label>Description</label>
+                            <textarea name="description" class="form-textarea" placeholder="Describe your event..."></textarea>
                         </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Ticket Price (RM) <span>*</span></label>
+                                <input type="number" name="price" class="form-input" step="0.01" placeholder="0.00" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Total Ticket Quantity <span>*</span></label>
+                                <input type="number" name="ticketQuantity" class="form-input" placeholder="e.g. 100" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Status <span>*</span></label>
+                                <select name="status" class="form-select">
+                                    <option value="Draft">Draft (Hidden)</option>
+                                    <option value="Published">Published (Visible)</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Date & Time</div>
                         
-                        <div class="form-section-title">Date & Venue</div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Start Date & Time <span>*</span></label>
+                                <input type="datetime-local" name="startDate" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>End Date & Time <span>*</span></label>
+                                <input type="datetime-local" name="endDate" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Venue Information</div>
 
                         <div class="form-row">
                             <div class="form-group">
-                                <label class="form-label">Venue Name <span>*</span></label>
-                                <input type="text" class="form-input" placeholder="e.g. KL Convention Centre" required>
+                                <label>Venue Name <span>*</span></label>
+                                <input type="text" name="venueName" class="form-input" placeholder="e.g. Grand Hall" required>
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Venue Capacity <span>*</span></label>
-                                <input type="number" class="form-input" placeholder="Total seats available" required>
+                                <label>Venue Capacity</label>
+                                <input type="number" name="capacity" class="form-input" placeholder="e.g. 500">
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <label class="form-label">Full Address <span>*</span></label>
-                            <input type="text" class="form-input" placeholder="Street address, City, State" required>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">Start Date & Time <span>*</span></label>
-                                <input type="datetime-local" class="form-input" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">End Date & Time <span>*</span></label>
-                                <input type="datetime-local" class="form-input" required>
-                            </div>
-                        </div>
-
-                        <div class="form-section-title">Ticket & Pricing</div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="form-label">Price per Ticket (RM) <span>*</span></label>
-                                <input type="number" class="form-input" placeholder="0.00 for Free" step="0.01" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Ticket Quantity</label>
-                                <input type="number" class="form-input" placeholder="Available for sale">
-                            </div>
-                        </div>
-
-                        <div class="form-section-title">Event Media</div>
-
-                        <div class="form-group">
-                            <label class="form-label">Event Banner Image</label>
-                            <div class="file-upload-box">
-                                <i class="fas fa-cloud-upload-alt upload-icon"></i>
-                                <p>Click to upload or drag and drop</p>
-                                <span style="font-size: 12px;">(Max size: 5MB, JPG/PNG)</span>
-                                <input type="file" style="display: none;">
-                            </div>
+                            <label>Full Address <span>*</span></label>
+                            <textarea name="address" class="form-textarea" placeholder="Enter venue address..."></textarea>
                         </div>
 
                         <div class="form-actions">
-                            <button type="button" class="btn-cancel">Cancel</button>
-                            <button type="submit" class="btn-submit">
-                                <i class="fas fa-check"></i> Publish Event
-                            </button>
+                            <button type="reset" class="btn-cancel">Reset</button>
+                            <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Create Event</button>
                         </div>
-
                     </form>
                 </div>
             </div>
-
         </main>
     </div>
-
-    <script>
-        function toggleDropdown() {
-            document.getElementById("orgDropdown").classList.toggle("show");
-        }
-        window.onclick = function(event) {
-            if (!event.target.closest('.user-btn')) {
-                var dropdowns = document.getElementsByClassName("dropdown-content");
-                for (var i = 0; i < dropdowns.length; i++) {
-                    var openDropdown = dropdowns[i];
-                    if (openDropdown.classList.contains('show')) {
-                        openDropdown.classList.remove('show');
-                    }
-                }
-            }
-        }
-        
-        // Simple script to trigger file input click
-        document.querySelector('.file-upload-box').addEventListener('click', function() {
-            this.querySelector('input[type="file"]').click();
-        });
-    </script>
 </body>
 </html>

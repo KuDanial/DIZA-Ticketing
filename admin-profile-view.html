@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Admin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styledashboard.css">
+    <style>
+        .view-label { font-size: 12px; color: #888; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 5px; font-weight: 600; }
+        .view-value { font-size: 15px; color: #333; margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
+        .role-badge.super { background-color: #efebe9; color: #795548; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+    </style>
+</head>
+<body class="admin-theme">
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
+                <h2>EventApp <span class="badge">ADMIN</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="menu-header">User Management</li>
+                <li><a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a></li>
+                <li><a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a></li>
+                <li><a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
+                <li class="menu-header">System</li>
+                <li><a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title"><h1>My Profile</h1></div>
+            </header>
+
+            <div class="content-padding">
+                <div class="profile-container">
+                    
+                    <div class="card profile-card card-padded">
+                        <div class="profile-img-container">
+                            <img src="images/member2profile.png" alt="Admin Avatar">
+                        </div>
+                        <h2>Super Admin</h2>
+                        <p class="role-text">System Administrator</p>
+                        <p class="email-text">admin@dizaet.com</p>
+                    </div>
+
+                    <div class="card card-padded">
+                        <div class="card-header">
+                            <h3>Personal Information</h3>
+                            <a href="admin-profile-edit.html" class="btn-primary" style="font-size:12px;">
+                                <i class="fas fa-pen"></i> Edit Profile
+                            </a>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="view-label">First Name</div>
+                                <div class="view-value">Super</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="view-label">Last Name</div>
+                                <div class="view-value">Admin</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="view-label">Username</div>
+                                <div class="view-value">superadmin</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="view-label">Gender</div>
+                                <div class="view-value">Male</div>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <div class="view-label">Email Address</div>
+                                <div class="view-value">admin@dizaet.com</div>
+                            </div>
+                            <div class="form-group">
+                                <div class="view-label">Phone Number</div>
+                                <div class="view-value">+60 12-999 8888</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="view-label">Role Level</div>
+                            <div class="view-value"><span class="role-badge super">Super Admin</span></div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Organizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styledashboard.css">
+</head>
+<body class="admin-theme">
+    <div class="dashboard-container">
+        
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="images/DIZAET_LogoWhite.png" alt="DIZAET Logo" class="brand-logo">
+                <h2>EventApp <span class="badge">ADMIN</span></h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="admin-dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li class="menu-header">User Management</li>
+                <li><a href="manage-attendees.html"><i class="fas fa-user"></i> Manage Attendees</a></li>
+                <li class="active"><a href="manage-organizers.html"><i class="fas fa-briefcase"></i> Manage Organizers</a></li>
+                <li><a href="manage-events.html"><i class="fas fa-calendar-alt"></i> Manage Events</a></li>
+                <li class="menu-header">System</li>
+                <li><a href="manage-admins.html"><i class="fas fa-user-shield"></i> Manage Admins</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="page-title"><h1>Edit Organizer</h1></div>
+            </header>
+
+            <div class="content-padding">
+                <div class="card card-padded">
+                    <div class="card-header">
+                        <h3>Update Information</h3>
+                        <span class="optional-tag">ID: #ORG-088</span>
+                    </div>
+                    
+                    <form action="#" method="POST" class="admin-form">
+                        
+                        <div class="form-section-title">Personal Information</div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>First Name <span>*</span></label>
+                                <input type="text" name="FName" value="Ahmad" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Last Name <span>*</span></label>
+                                <input type="text" name="LName" value="Razak" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Personal Email <span>*</span></label>
+                                <input type="email" name="email" value="ahmad@gmail.com" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Username (Read Only)</label>
+                                <input type="text" name="username" value="ahmad_events" class="form-input" readonly style="background:#f9f9f9; color:#777;">
+                            </div>
+                        </div>
+
+                        <div class="form-section-title">Organization Details</div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Company Name <span>*</span></label>
+                                <input type="text" name="companyName" value="Global Tech Events" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Business Phone <span>*</span></label>
+                                <input type="tel" name="businessPhone" value="+60 3-8888 9999" class="form-input" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Business Email</label>
+                                <input type="email" name="businessEmail" value="contact@globaltech.com" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label>Website URL</label>
+                                <input type="url" name="websiteUrl" value="https://globaltech.com" class="form-input">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>About Description</label>
+                            <textarea name="aboutDescription" class="form-textarea">Leading organizer for technology and software conferences in Southeast Asia.</textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <a href="manage-organizers.html" class="btn-cancel">Cancel</a>
+                            <button type="submit" class="btn-primary"><i class="fas fa-check"></i> Update Organizer</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
