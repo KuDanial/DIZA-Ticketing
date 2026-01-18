@@ -6,7 +6,27 @@
     <title>Manage Admins - Admin Panel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="styledashboard.css">
-    
+    <style>
+        /* Add this to the <style> block in all 5 files */
+
+        /* View Button Style (Purple) */
+        .btn-action.view {
+            background-color: #f3e5f5;
+            color: #8e44ad;
+        }
+        .btn-action.view:hover {
+            background-color: #8e44ad;
+            color: white;
+        }
+
+        /* Fix for using <a> tags as buttons */
+        a.btn-primary, a.btn-create, a.btn-action {
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
 </head>
 <body class="admin-theme">
 
@@ -74,9 +94,9 @@
                             <i class="fas fa-search"></i>
                             <input type="text" placeholder="Search admin name...">
                         </div>
-                        <button class="btn-primary">
+                        <a href="manage-admins-addNew.html" class="btn-primary">
                             <i class="fas fa-plus"></i> Add New Admin
-                        </button>
+                        </a>
                     </div>
 
                     <div class="table-responsive">
@@ -107,7 +127,9 @@
                                     <td>Just Now</td>
                                     <td><span class="status active">Active</span></td>
                                     <td class="text-right">
-                                        <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>
+                                        <a href="manage-admins-view.html" class="btn-action view" title="View Details"><i class="fas fa-eye"></i></a>
+                                        <a href="manage-admins-edit.html" class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></a>
+                                        <button class="btn-action delete" title="Delete"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
 
@@ -126,7 +148,8 @@
                                     <td>2 hours ago</td>
                                     <td><span class="status active">Active</span></td>
                                     <td class="text-right">
-                                        <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>
+                                        <a href="manage-admins-view.html" class="btn-action view" title="View Details"><i class="fas fa-eye"></i></a>
+                                        <a href="manage-admins-edit.html" class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></a>
                                         <button class="btn-action delete" title="Delete"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
@@ -146,7 +169,8 @@
                                     <td>30 days ago</td>
                                     <td><span class="status inactive">Inactive</span></td>
                                     <td class="text-right">
-                                        <button class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></button>
+                                        <a href="manage-admins-view.html" class="btn-action view" title="View Details"><i class="fas fa-eye"></i></a>
+                                        <a href="manage-admins-edit.html" class="btn-action edit" title="Edit"><i class="fas fa-pen"></i></a>
                                         <button class="btn-action delete" title="Delete"><i class="fas fa-trash"></i></button>
                                     </td>
                                 </tr>
