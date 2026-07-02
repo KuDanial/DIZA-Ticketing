@@ -1,11 +1,19 @@
 # 🎫 DIZA Event Ticket (DIZAET)
-![Landing Page](./images/screenshot.png)
+
+<p align="center">
+<img src="./images/DIZAET_Logo.png" alt="Logo" width="500">
+</p>
+
 > **Your one-stop platform for all event ticketing needs.**
 
 DIZA Event Ticket is a web-based application designed to streamline the process of managing and attending events. It provides a seamless interface for **Attendees** to book tickets and **Organizers** to manage their events, all within a secure and user-friendly environment.
 
 ![Project Status](https://img.shields.io/badge/Status-In%20Development-orange)
 ![Tech Stack](https://img.shields.io/badge/Stack-Java%20EE%20%7C%20MySQL%20%7C%20HTML5-blue)
+
+---
+
+![Landing Page](./images/screenshot.png)
 
 ## 🌟 Features
 
