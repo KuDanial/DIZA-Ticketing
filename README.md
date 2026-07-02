@@ -38,6 +38,8 @@ This project is built using the following technologies:
 * **Server:** Apache Tomcat 11
 * **IDE:** NetBeans IDE 27 / JDK 25
 
+---
+
 ## 🚀 Installation & Setup
 
 Follow these steps to run the project locally:
