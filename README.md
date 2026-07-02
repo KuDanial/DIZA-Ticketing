@@ -25,6 +25,8 @@ DIZA Event Ticket is a web-based application designed to streamline the process 
 * **Interactive UI:** Modern, responsive design with interactive forms and clear navigation.
 * **Dashboard:** Personalized dashboards for different user roles.
 
+---
+
 ## 🛠️ Tech Stack
 
 This project is built using the following technologies:
