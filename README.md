@@ -61,6 +61,8 @@ Follow these steps to run the project locally:
     * Right-click the project > **Run**.
     * The application will launch on `http://localhost:8080/DIZA-Event-Ticket`.
 
+---
+
 ## 📂 Project Structure
 
 ```text
